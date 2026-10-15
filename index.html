@@ -1,0 +1,436 @@
+<title>Prospecção ABC Serra</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=Figtree:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap">
+<style>
+/* Layout: ferramenta de trabalho — cabeçalho com progresso, sumário fixo à esquerda, cartões por cidade à direita, pop-up por estabelecimento */
+:root{
+  --bg:#F3F6F4; --surface:#FFFFFF; --ink:#16201B; --muted:#5E6B64; --line:#DCE3DF;
+  --accent:#1E6A4E; --accent-soft:#E2F0E9; --hi:#B4472C; --hi-soft:#F8E6E0; --mid:#9A6B10; --mid-soft:#F6EED9;
+  --low:#66706B; --low-soft:#ECEFED; --done:#1E6A4E;
+  --display:"Bricolage Grotesque",ui-sans-serif,system-ui,sans-serif;
+  --body:"Figtree",ui-sans-serif,system-ui,sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,Consolas,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0F1512; --surface:#18211C; --ink:#E4ECE7; --muted:#97A59D; --line:#2A362F;
+  --accent:#5CC89C; --accent-soft:#1D3329; --hi:#F08B6E; --hi-soft:#3A221B; --mid:#E2B654; --mid-soft:#352B16;
+  --low:#9AA59F; --low-soft:#232C27; --done:#5CC89C; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0F1512; --surface:#18211C; --ink:#E4ECE7; --muted:#97A59D; --line:#2A362F;
+  --accent:#5CC89C; --accent-soft:#1D3329; --hi:#F08B6E; --hi-soft:#3A221B; --mid:#E2B654; --mid-soft:#352B16;
+  --low:#9AA59F; --low-soft:#232C27; --done:#5CC89C; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:15px;line-height:1.5}
+.wrap{max-width:1240px;margin:0 auto;padding-inline:16px;padding-block:20px 48px}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0;letter-spacing:-.01em}
+h1{font-size:clamp(1.6rem,3vw,2.2rem)}
+header.top{display:flex;flex-wrap:wrap;gap:16px 32px;align-items:end;justify-content:space-between;padding-bottom:16px;border-bottom:1px solid var(--line)}
+.sub{color:var(--muted);margin:4px 0 0}
+.stats{display:flex;gap:20px;flex-wrap:wrap;font-variant-numeric:tabular-nums}
+.stat b{display:block;font-family:var(--display);font-size:1.5rem;line-height:1}
+.stat span{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+.bar{height:6px;background:var(--line);border-radius:3px;overflow:hidden;margin-top:12px;width:100%}
+.bar i{display:block;height:100%;background:var(--accent);width:0;transition:width .3s}
+.sync{font-size:.8rem;color:var(--muted);margin-top:6px}
+.tools{display:flex;flex-wrap:wrap;gap:10px;align-items:center;padding-block:16px}
+.tools input[type=search]{flex:1 1 220px;min-width:0;padding:9px 12px;border:1px solid var(--line);border-radius:8px;background:var(--surface);color:var(--ink);font:inherit}
+.chips{display:flex;gap:6px;flex-wrap:wrap}
+.chip{border:1px solid var(--line);background:var(--surface);color:var(--ink);padding:6px 11px;border-radius:999px;font:inherit;font-size:.85rem;cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.layout{display:grid;grid-template-columns:260px minmax(0,1fr);gap:28px;align-items:start}
+nav.toc{position:sticky;top:calc(env(safe-area-inset-top,0px) + 12px);max-height:calc(100vh - 24px);overflow:auto;padding-right:6px}
+.toc h2{font-size:1rem;margin-bottom:8px}
+.toc details{margin-bottom:6px}
+.toc summary{cursor:pointer;font-weight:600;font-size:.85rem;padding:4px 0;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.toc ol{list-style:none;margin:2px 0 8px;padding:0}
+.toc button{all:unset;cursor:pointer;display:flex;gap:8px;align-items:center;width:100%;padding:3px 4px;border-radius:5px;font-size:.88rem}
+.toc button:hover,.toc button:focus-visible{background:var(--accent-soft)}
+.toc button:focus-visible{outline:2px solid var(--accent)}
+.dot{width:8px;height:8px;border-radius:50%;flex:none;background:var(--line)}
+.dot.p-A{background:var(--hi)}.dot.p-MA{background:var(--hi);opacity:.55}.dot.p-M{background:var(--mid)}.dot.p-B{background:var(--low)}
+.toc .ok{text-decoration:line-through;color:var(--muted)}
+section.city{margin-bottom:32px}
+section.city h2{font-size:1.25rem;display:flex;gap:10px;align-items:baseline;margin-bottom:12px}
+section.city h2 small{font-family:var(--body);font-weight:500;font-size:.85rem;color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px}
+.card{all:unset;box-sizing:border-box;cursor:pointer;display:flex;flex-direction:column;gap:8px;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:14px;min-width:0;transition:border-color .15s,transform .15s}
+.card:hover{border-color:var(--accent)}
+.card:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.card h3{font-size:1.02rem;line-height:1.25}
+.card .seg{color:var(--muted);font-size:.85rem}
+.card .row{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-top:auto;font-size:.8rem;font-variant-numeric:tabular-nums}
+.card.is-done{opacity:.7}
+.pill{display:inline-block;font-size:.72rem;font-weight:600;padding:2px 8px;border-radius:999px;letter-spacing:.03em;text-transform:uppercase}
+.pill.p-A,.pill.p-MA{background:var(--hi-soft);color:var(--hi)}
+.pill.p-M{background:var(--mid-soft);color:var(--mid)}
+.pill.p-B{background:var(--low-soft);color:var(--low)}
+.pill.ok{background:var(--accent-soft);color:var(--done)}
+.mini{height:4px;background:var(--line);border-radius:2px;overflow:hidden;flex:1;max-width:90px}
+.mini i{display:block;height:100%;background:var(--accent)}
+.empty{color:var(--muted);padding:24px 0}
+dialog{border:none;border-radius:14px;padding:0;width:min(680px,calc(100vw - 24px));max-height:calc(100vh - 32px);background:var(--surface);color:var(--ink);box-shadow:0 20px 60px rgba(0,0,0,.3)}
+dialog::backdrop{background:rgba(10,20,15,.55)}
+.m-head{position:sticky;top:0;background:var(--surface);padding:18px 20px 12px;border-bottom:1px solid var(--line);display:flex;gap:12px;justify-content:space-between;align-items:start;z-index:1}
+.m-head h2{font-size:1.35rem}
+.m-head .meta{color:var(--muted);font-size:.88rem;margin-top:4px;display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.x{all:unset;cursor:pointer;font-size:1.5rem;line-height:1;padding:4px 8px;border-radius:6px;color:var(--muted)}
+.x:hover,.x:focus-visible{background:var(--line);color:var(--ink)}
+.m-body{padding:16px 20px;display:grid;gap:18px}
+.info{display:grid;grid-template-columns:110px minmax(0,1fr);gap:8px 14px;font-size:.92rem}
+.info dt{color:var(--muted);font-size:.78rem;text-transform:uppercase;letter-spacing:.05em;padding-top:2px}
+.info dd{margin:0;min-width:0;overflow-wrap:anywhere}
+.phone{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin-bottom:4px}
+.phone code{font-family:var(--mono);font-size:.88rem;user-select:all}
+.sbtn{font:inherit;font-size:.75rem;padding:2px 8px;border-radius:6px;border:1px solid var(--line);background:var(--bg);color:var(--ink);cursor:pointer;text-decoration:none}
+.sbtn:hover{border-color:var(--accent)}
+.links{display:flex;flex-wrap:wrap;gap:6px}
+.links a{font-size:.85rem;color:var(--accent);text-decoration:none;border:1px solid var(--line);padding:3px 10px;border-radius:999px}
+.links a:hover{border-color:var(--accent)}
+fieldset{border:none;padding:0;margin:0}
+legend{font-family:var(--display);font-weight:700;font-size:1rem;margin-bottom:6px;padding:0}
+.check{display:flex;gap:10px;align-items:flex-start;padding:7px 8px;border-radius:7px;cursor:pointer}
+.check:hover{background:var(--bg)}
+.check input{width:18px;height:18px;margin:1px 0 0;accent-color:var(--accent);flex:none}
+.check input:checked+span{text-decoration:line-through;color:var(--muted)}
+textarea{width:100%;min-height:70px;padding:9px 11px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink);font:inherit;resize:vertical}
+.m-foot{position:sticky;bottom:0;background:var(--surface);border-top:1px solid var(--line);padding:14px 20px;display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between}
+.m-foot .check{font-weight:600;padding:4px 0}
+.m-foot .check input:checked+span{text-decoration:none;color:var(--done)}
+.btn{font:inherit;font-weight:600;padding:9px 16px;border-radius:8px;border:1px solid transparent;cursor:pointer}
+.btn:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.btn.danger{background:var(--hi);color:var(--surface)}
+.btn.danger:disabled{background:var(--line);color:var(--muted);cursor:not-allowed}
+.btn.ghost{background:transparent;border-color:var(--line);color:var(--ink)}
+.btn.primary{background:var(--accent);color:var(--surface)}
+.confirm{display:flex;gap:8px;align-items:center;flex-wrap:wrap;font-size:.9rem}
+.hint{font-size:.8rem;color:var(--muted)}
+.toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:9px 16px;border-radius:8px;font-size:.9rem;z-index:10}
+@media (max-width:820px){
+  .layout{grid-template-columns:minmax(0,1fr)}
+  nav.toc{position:static;max-height:none;border:1px solid var(--line);border-radius:10px;padding:10px 12px;background:var(--surface)}
+  .info{grid-template-columns:minmax(0,1fr)}
+  .info dt{padding-top:6px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+
+<div class="wrap">
+  <header class="top">
+    <div style="min-width:0;flex:1 1 320px">
+      <h1>Prospecção ABC Serra</h1>
+      <p class="sub">Ribeirão Pires, Mauá, Paranapiacaba e Rio Grande da Serra · levantamento de 14/10/2026</p>
+      <div class="bar" aria-hidden="true"><i id="bar"></i></div>
+      <div class="sync" id="sync">Carregando progresso…</div>
+    </div>
+    <div class="stats">
+      <div class="stat"><b id="sAtivos">0</b><span>Na lista</span></div>
+      <div class="stat"><b id="sDone">0</b><span>Concluídos</span></div>
+      <div class="stat"><b id="sDel">0</b><span>Excluídos</span></div>
+    </div>
+  </header>
+
+  <div class="tools">
+    <input type="search" id="q" placeholder="Buscar por nome, segmento ou bairro" aria-label="Buscar estabelecimento">
+    <div class="chips" id="cityChips" role="group" aria-label="Filtrar por cidade"></div>
+    <div class="chips" id="prioChips" role="group" aria-label="Filtrar por prioridade"></div>
+    <div class="chips"><button class="chip" id="showDel" aria-pressed="false">Ver excluídos</button></div>
+  </div>
+
+  <div class="layout">
+    <nav class="toc" aria-label="Sumário">
+      <h2>Sumário</h2>
+      <div id="toc"></div>
+    </nav>
+    <main id="main"></main>
+  </div>
+</div>
+
+<dialog id="dlg" aria-labelledby="dName"></dialog>
+<div class="toast" id="toast" hidden></div>
+
+<script>
+const CITIES={RP:"Ribeirão Pires",MA:"Mauá",PA:"Paranapiacaba",RG:"Rio Grande da Serra"};
+const PRIO={A:"Alta",MA:"Média-alta",M:"Média",B:"Baixa"};
+const PORD={A:0,MA:1,M:2,B:3};
+const ETAPAS=["Pesquisei o perfil e anotei a dor principal","Montei a demonstração com os produtos da loja","Enviei o primeiro contato (WhatsApp ou direct)","Fiz o retorno depois de 3 dias","Apresentei a proposta e o preço"];
+const ig=h=>["Instagram","https://www.instagram.com/"+h+"/"];
+const fb=u=>["Facebook",u];
+const lt=u=>["Linktree",u];
+const rg=u=>["Restaurant Guru",u];
+
+const DATA=[
+// ===== Ribeirão Pires — alimentação
+{n:"Restaurante Família Eiras",c:"RP",s:"Restaurante self-service (desde 1978)",p:"A",a:"R. Euclides da Cunha, 91, Centro, CEP 09400-220",t:["(11) 4828-1176","(11) 99611-1176"],l:[ig("restaurante_familia_eiras"),fb("https://www.facebook.com/restauranteeiras/"),rg("https://restaurantguru.com.br/Familia-Eiras-Ribeirao-Pires")],h:"Google 4,5 com 1.290 avaliações. Link da bio só abre o WhatsApp. Sem site nem cardápio digital.",x:["Cardápio digital com QR code (inclui preço do quilo)","Cardápio do dia automático no WhatsApp","Pedido de marmita online sem taxa","Corrigir horário no Google Perfil","Site simples com cardápio do dia"]},
+{n:"Brothers Rock Bar",c:"RP",s:"Bar com música ao vivo",p:"A",a:"Av. Francisco Monteiro, 143, Centro",t:[],l:[ig("brothers_rock_bar"),lt("https://linktr.ee/brothers_rock_bar"),fb("https://www.facebook.com/brothersrockbar")],h:"43,4 mil seguidores. O Linktree só tem TikTok e Facebook: sem cardápio, reservas ou agenda de shows.",x:["Cardápio QR code nas mesas","Site com agenda de shows","Reserva e lista online","Chatbot no WhatsApp","Programa de fidelidade"]},
+{n:"Rittorno Pizzaria",c:"RP",s:"Pizzaria e rodízio",p:"A",a:"Av. Francisco Monteiro, 647, loja 7, CEP 09400-310",t:["(11) 97292-6755","(11) 4822-4340"],l:[ig("rittorno_ribeiraopires"),lt("https://linktr.ee/Rittorno.pizzaria")],h:"9.741 seguidores. Linktree só com WhatsApp e telefones. Sem cardápio digital nem pedido online.",x:["Cardápio QR com pedido online","Reservas do rodízio por chatbot","Site","Cupom e programa de fidelidade","Google Perfil"]},
+{n:"Pizzaria Fiorenttina",c:"RP",s:"Pizzaria, rodízio e delivery",p:"A",a:"Av. Francisco Monteiro, 647, Centro (confirmar se é casa diferente da Rittorno)",t:["(11) 93264-0032"],l:[ig("pizzariafiorenttina_")],h:"6.613 seguidores. Pedidos e reservas só por WhatsApp manual.",x:["Cardápio de delivery com pedido próprio","Chatbot de pedidos e reservas","QR code nas mesas","Programa de fidelidade","Google Perfil"]},
+{n:"Consulado da Carne",c:"RP",s:"Restaurante de carnes com delivery",p:"A",a:"R. Miguel Prisco, 726, Centro",t:["(11) 97848-8752","(11) 4825-9175"],l:[ig("consuladodacarne")],h:"9.668 seguidores. Delivery de terça a sexta, 18h–22h, todo pelo WhatsApp.",x:["Pedido online próprio para o delivery","Cardápio QR code","Chatbot no WhatsApp","Site","Programa de fidelidade"]},
+{n:"Padaria Maristela",c:"RP",s:"Padaria com 2 unidades",p:"A",a:"Un. I: R. Irineu Fernandes de Souza, 10 · Un. II: Av. Pref. Valdírio Prisco, 1193",t:["(11) 94164-6969","(11) 4827-4489"],l:[ig("padariamaristela")],h:"9.036 seguidores. Delivery só pelo iFood, sem link na bio. Telefones de lista de 2020: confirmar.",x:["Encomendas online de bolos, cestas e café da manhã","Cardápio digital","Site com as duas unidades","Chatbot de encomendas","Programa de fidelidade"]},
+{n:"Cindy Confeitaria",c:"RP",s:"Confeitaria (mais de 50 anos)",p:"A",a:"Centro (ver mapa)",t:["(11) 4828-5333"],l:[ig("confeitariacindy"),lt("https://linktr.ee/confeitariacindy"),["iFood","https://www.ifood.com.br/delivery/ribeirao-pires-sp/cindy-centro/ff154a25-7403-435c-8deb-60fa30de2b0c"],["Mapa","https://goo.gl/maps/JiDGQjdpJS7PzvPQ9"]],h:"6.460 seguidores. Encomendas de bolo por WhatsApp manual; o resto vai pelo iFood.",x:["Catálogo de encomendas por sabor e tamanho","Sinal via Pix na encomenda","Chatbot de encomendas","Site","Pedido próprio fora do iFood"]},
+{n:"Café Colonial Di Fiore",c:"RP",s:"Café colonial (sáb e dom, 8h–12h30)",p:"A",a:"R. dos Alpes, 175, CEP 09414-100",t:["(11) 99686-2236"],l:[ig("cafe.difiore"),rg("https://restaurantguru.com.br/Cafe-Colonial-Di-Fiore-Ribeirao-Pires")],h:"17,7 mil seguidores e Google 4,7 (297). Atende por ordem de chegada; Google sem horário.",x:["Reserva ou fila online","Venda antecipada","Cardápio digital","Chatbot de horário e preço","Google Perfil com horário"]},
+{n:"Restaurante Quintal de Casa",c:"RP",s:"Restaurante e bar",p:"A",a:"R. Alvorada, 20, CEP 09403-100",t:["(11) 94519-5855"],l:[rg("https://restaurantguru.com.br/Restaurante-Quintal-de-Casa-Ribeirao-Pires")],h:"Google 4,8 com 426 avaliações, mas sem Instagram nem site encontrados.",x:["Criar o Instagram","Otimizar o Google Perfil","Site com cardápio","Cardápio QR code","Reservas e pedidos automatizados no WhatsApp"]},
+{n:"Pesqueiro Nova Tropical",c:"RP",s:"Pesqueiro com restaurante",p:"MA",a:"Av. Kaethe Richers, 1659, Ponte Seca, CEP 09411-700",t:["(11) 94717-5799"],l:[ig("pesqueiro_tropical"),rg("https://restaurantguru.com.br/Pesqueiro-Nova-Tropical-Ribeirao-Pires")],h:"Google 4,6 com 1.504 avaliações. O cardápio é uma arte do Canva.",x:["Cardápio digital de verdade com QR code","Site com preços de pesca e restaurante","Venda de day-use online","Chatbot"]},
+{n:"Blessed Coffee",c:"RP",s:"Cafeteria e almoço",p:"MA",a:"Av. Francisco Monteiro, 1206, 1º andar, CEP 09406-300",t:["(11) 99603-5597"],l:[ig("blessedcoffeerp"),rg("https://restaurantguru.com.br/Blessed-coffee-cafeteria-e-restaurante-Ribeirao-Pires")],h:"Google 4,9. O link da bio abre o WhatsApp com “quero ver o cardápio”, que é enviado à mão.",x:["Cardápio QR code","Chatbot no WhatsApp","Pedidos e encomendas online","Google Perfil e conteúdo"]},
+{n:"Costelaria Rancho Tibiriçá",c:"RP",s:"Costelaria",p:"MA",a:"Rod. Índio Tibiriçá, 4401, km 43,6, CEP 09410-000",t:["(11) 94490-9490"],l:[rg("https://restaurantguru.com/Costelaria-Rancho-Tibirica-Ribeirao-Pires")],h:"Google 4,2 (199). Sem site nem rede social.",x:["Criar o Instagram","Google Perfil","Site com cardápio","Cardápio QR code","Reservas e pedidos por chatbot"]},
+{n:"Botec Santa Rita",c:"RP",s:"Boteco e lanches",p:"MA",a:"R. Olavo Bilac, 169, Colônia",t:["(11) 97315-2008"],l:[ig("botecosantarita")],h:"Cardápio e combos aparecem só em vídeos. Link da bio só para o WhatsApp.",x:["Cardápio QR code","Pedido online de lanches","Chatbot no WhatsApp","Google Perfil","Programa de fidelidade"]},
+{n:"Restaurante Gamboa",c:"RP",s:"Comida caseira e delivery",p:"M",a:"Av. Francisco Monteiro, 1126, Santana, CEP 09406-300",t:["(11) 96907-7231","(11) 4824-6437"],l:[ig("gamboa_restaurante"),fb("https://www.facebook.com/GamboaRestaurante/")],h:"Google 4,4 (426). Instagram parado desde dez/2024.",x:["Cardápio do dia digital","Pedido de marmita online","Chatbot no WhatsApp","Reativar redes e Google Perfil"]},
+{n:"Açaiteria Pires",c:"RP",s:"Açaí",p:"M",a:"Centro",t:[],l:[ig("acaipiresrp"),ig("acaipires")],h:"“Pedidos somente por WhatsApp” e delivery pelo iFood.",x:["Pedido próprio com montagem do copo","Chatbot no WhatsApp","Cartão fidelidade digital","Google Perfil"]},
+{n:"Açaí Formosa",c:"RP",s:"Açaí",p:"M",a:"Centro",t:["(11) 91753-8038"],l:[ig("acaiformosaribeiraopires")],h:"Delivery só pelo iFood e WhatsApp manual.",x:["Pedido online próprio sem taxa","Cardápio digital","Programa de fidelidade","Chatbot"]},
+{n:"Restaurante & Café Havana",c:"RP",s:"Almoço e lanches",p:"M",a:"R. Boa Vista, Quiosque 01, Centro, CEP 09400-180",t:["(11) 4823-6268"],l:[],h:"Google 4,3 (277). Sem rede social própria; horários no Google inconsistentes.",x:["Criar o Instagram","Google Perfil com horário corrigido","Cardápio QR code","Pedidos no WhatsApp com automação"]},
+{n:"Buenos Burger",c:"RP",s:"Hamburgueria noturna",p:"M",a:"R. Augusto Maziero, 503, CEP 09403-400",t:["(11) 97140-7026"],l:[rg("https://restaurantguru.com.br/Buenos-Burguer-Ribeirao-Pires")],h:"Google 5,0 (34). Sem rede social nem link de pedido.",x:["Cardápio digital e pedido online","Criar o Instagram","Chatbot no WhatsApp","Programa de fidelidade"]},
+{n:"Fast-Food Caipira",c:"RP",s:"Lanchonete",p:"M",a:"Av. Fortuna, 19, Centro, CEP 09400-320",t:[],l:[rg("https://restaurantguru.com.br/Fast-Food-Caipira-Ribeirao-Pires")],h:"Google 4,7 (23). Sem telefone, site ou rede social: abordagem presencial.",x:["Google Perfil com telefone","Criar o Instagram","Cardápio digital","Pedido por WhatsApp e online"]},
+{n:"Me Amo Cafeteria",c:"RP",s:"Cafeteria",p:"B",a:"Não publicado",t:[],l:[ig("meamo.cafeteria")],h:"Bio só com link do Threads. Sem telefone nem endereço no perfil.",x:["Cardápio QR code","Google Perfil","WhatsApp visível com automação","Site simples"]},
+// ===== Ribeirão Pires — comércio e serviços
+{n:"Salão Miracle Hair",c:"RP",s:"Salão de beleza",p:"A",a:"R. Stella Bruna Cecchi Nardelli, 179",t:["(11) 94216-0211"],l:[ig("salaomiraclehair_")],h:"15 mil seguidores e vários reels em set–out/2026. Link da bio só abre o WhatsApp; sem agenda online nem site.",x:["Agendamento online por profissional e serviço","Lembrete automático contra faltas","Chatbot no WhatsApp","CRM de retorno de clientes","Landing page"]},
+{n:"Teruel Colchões",c:"RP",s:"Colchões e estofados",p:"A",a:"Rua Capitão José Gallo, 254, Centro",t:[],l:[ig("teruelcolchoes")],h:"Posta quase todo dia. O texto da bio aponta para um link que não existe.",x:["Catálogo ou loja virtual com preço e parcelamento","WhatsApp Business com catálogo","Link na bio","Google Perfil","Pós-venda automático"]},
+{n:"Ótica Estância",c:"RP",s:"Ótica (16 anos)",p:"A",a:"Não aparece no perfil (confirmar no Google Maps)",t:["(11) 4825-1183","(11) 97272-1183"],l:[ig("oticaestancia")],h:"Só WhatsApp. Sem catálogo de armações nem agendamento de exame.",x:["Catálogo digital de armações","Agendamento de exame de vista","Chatbot de orçamento e status do pedido","Google Perfil com endereço","Lembrete de troca de óculos"]},
+{n:"Clínica Elleven",c:"RP",s:"Estética",p:"A",a:"Não encontrado",t:["(11) 93585-3848"],l:[ig("ellevenestetica")],h:"5.914 seguidores. Link só para o WhatsApp; sem site.",x:["Agendamento online","Landing page de procedimentos","Chatbot no WhatsApp","Google Perfil com endereço","Pacotes de procedimentos"]},
+{n:"Espaço Pet",c:"RP",s:"Banho e tosa",p:"A",a:"Provável Av. Francisco Monteiro, 1060, Centro (confirmar)",t:["(11) 93309-5748","(11) 4824-6699"],l:[ig("espacopet.ribeirao")],h:"O botão “Agendar Aqui” abre só o WhatsApp.",x:["Agendamento online com lembrete","Pacotes ou assinatura de banhos","Chatbot no WhatsApp","Cadastro de pets com recorrência","Google Perfil"]},
+{n:"Patinhas Pet Care",c:"RP",s:"Banho e tosa",p:"A",a:"R. Miguel Prisco, 1467",t:["(11) 97184-7410","(11) 4829-4076"],l:[ig("patinhasrp")],h:"“Agendamento antecipado” feito à mão pelo WhatsApp.",x:["Agendamento online","Lembrete automático de retorno","Chatbot no WhatsApp","Programa de fidelidade","Google Perfil"]},
+{n:"Elite Tecidos",c:"RP",s:"Tecidos e aviamentos",p:"A",a:"R. Miguel Prisco, 86, Centro",t:["(11) 4823-1688","(11) 4828-1489"],l:[ig("elite_tecidos")],h:"Loja tradicional (Lojas Elite, desde 1958). Só venda física, nenhum link na bio.",x:["Catálogo ou loja virtual (metro e kits para artesãs)","WhatsApp Business com catálogo","Lista de transmissão de novidades","Link na bio","Google Perfil"]},
+{n:"Flex Academia",c:"RP",s:"Academia",p:"A",a:"Não encontrado",t:["(11) 4823-1169"],l:[ig("flexacademiarp")],h:"Divulga plano de R$ 69,90 sem link, sem matrícula online e sem endereço no perfil.",x:["Página de matrícula com pagamento recorrente","Agendamento de aula experimental","Sistema de gestão de alunos","Link na bio com WhatsApp","Google Perfil com endereço"]},
+{n:"Academia Sabará",c:"RP",s:"Pilates, natação e hidroginástica",p:"A",a:"Não encontrado",t:["(11) 93417-9399"],l:[ig("_academiasabara")],h:"Atendimento só pelo WhatsApp da bio. Sem site nem agendamento de turmas.",x:["Reserva de vagas em turmas","Site com grade de horários","Matrícula e mensalidade online","Chatbot no WhatsApp","Google Perfil"]},
+{n:"Depósito Ribeirão",c:"RP",s:"Material de construção (RP e RGS)",p:"A",a:"Av. Francisco Monteiro, 2703, Santa Luzia (RP) · Rua Venâncio Orsini, 71, Centro (Rio Grande da Serra)",t:[],l:[ig("depositoribeirao")],h:"Telefone só nos destaques do Instagram. Link da bio leva a uma arte do Canva; último post em 11/08/2025.",x:["Orçamento de obra com chatbot","Catálogo online","Google Perfil para as duas unidades","Site","Cadastro de pedreiros parceiros"]},
+{n:"Chácara Miyake",c:"RP",s:"Chácara para eventos",p:"A",a:"Centro Alto (número não encontrado)",t:["(11) 95043-9222"],l:[ig("chacaramiyake")],h:"Reservas por contato manual. Telefone tirado de um vídeo: confirmar.",x:["Calendário de disponibilidade","Reserva com sinal online","Site com fotos e preços","Chatbot de orçamento","Contrato digital"]},
+{n:"Clínica Danielle Casanova",c:"RP",s:"Clínica médica e estética",p:"M",a:"Av. Francisco Monteiro, sala 302, 3º andar",t:[],l:[ig("clinica_danielle_casanova"),lt("https://linktr.ee/clinica_danielle_casanova"),fb("https://www.facebook.com/ClinicaDanielleCasanova/"),["Google","https://g.page/ClinicaDanielleCasanova"]],h:"Já tem Google Perfil, mas não tem site nem agenda online.",x:["Site com páginas de procedimentos","Agendamento online de avaliação","Chatbot de triagem","Pós-procedimento e retorno automáticos"]},
+{n:"Ribeirão Auto Peças",c:"RP",s:"Autopeças",p:"M",a:"Av. Francisco Monteiro, 1255",t:["(11) 4827-1477"],l:[ig("ribeiraoautopecas_")],h:"Último post em 06/2024. Link da bio leva a uma arte estática.",x:["Orçamento automatizado no WhatsApp","Catálogo de peças por veículo","Google Perfil","Retomar as postagens"]},
+{n:"MJ Box e Baú",c:"RP",s:"Fábrica de camas box",p:"M",a:"Não encontrado",t:["(11) 91361-1523"],l:[ig("fabricamj")],h:"Vende pelo WhatsApp e entrega na Grande SP. Último post em 11/2024.",x:["Catálogo com medidas e preços","Chatbot de orçamento","Site","Google Perfil"]},
+// ===== Mauá — alimentação
+{n:"Pizzaria Sahara Premium",c:"MA",s:"Pizzaria",p:"A",a:"Av. Presidente Castelo Branco, 1633, Jardim Zaíra, CEP 09320-795",t:["(11) 4545-5655","(11) 96444-8816"],l:[ig("pizzariasaharapremium"),rg("https://restaurantguru.com/Pizzaria-Sahara-Premium-Maua")],h:"Nota 4,8, 2ª melhor pizzaria de Mauá no Restaurant Guru. Pedidos só pelo WhatsApp (a filial Guapituba já usa anota.ai).",x:["Cardápio digital com meia a meia, bordas e combos","Taxa de entrega por bairro","Chatbot de pedidos e status","Programa de fidelidade","Google Perfil com link de pedido"]},
+{n:"Confeitaria do Alemão",c:"MA",s:"Confeitaria (desde 1972)",p:"A",a:"Av. Barão de Mauá, 1754",t:["(11) 4514-6582"],l:[ig("confeitariadoalemao"),lt("https://linktr.ee/Confeitariadoalemao")],h:"9,5 mil seguidores, posts quase diários. Os 3 botões do Linktree levam ao mesmo WhatsApp; sem catálogo nem preços.",x:["Catálogo de bolos com tamanhos e preços","Formulário de encomenda com data e sinal","Respostas automáticas no WhatsApp","Agendamento de retirada","Site com a história desde 1972"]},
+{n:"Merengue Cake",c:"MA",s:"Bolos e doces finos",p:"A",a:"Não publicado",t:["(11) 95076-7021"],l:[ig("merenguecakee")],h:"11,2 mil seguidores. “Faça seu pedido no WhatsApp” é o único canal.",x:["Catálogo com sabores e preços","Formulário de encomenda com data","Sinal via Pix","Respostas automáticas","Agenda de capacidade de produção"]},
+{n:"La Casa das Esfihas Itapark",c:"MA",s:"Esfiharia delivery",p:"A",a:"Av. Itapark, 3642, Jardim Itapark",t:["(11) 99210-3235","(11) 98979-3392"],l:[ig("lacasadasesfihas_itapark"),lt("https://linktr.ee/lacasadasesfihasitaparkoficial")],h:"Pedidos 100% pelo WhatsApp. O perfil mostra 3 números diferentes.",x:["Cardápio digital com pedido online","Unificar o número e colocar chatbot","QR code para panfletos","Cupons automáticos","Google Perfil"]},
+{n:"Sabor Brasil Refeições",c:"MA",s:"Marmitex e refeições para empresas",p:"A",a:"Rua Havana, 185A, Parque das Américas, CEP 09351-020",t:["(11) 4547-5860"],l:[ig("saborbrasilmarmitex")],h:"3,8 mil seguidores. Atende delivery e empresas sem link de pedido nem cardápio.",x:["Cardápio do dia automático","Pedido de marmitex online","Portal de pedidos corporativos com fechamento mensal","Google Perfil"]},
+{n:"Padaria Nova Guapituba",c:"MA",s:"Padaria",p:"M",a:"Rua Haiti, 177, Parque das Américas",t:[],l:[ig("guapipaes_padaria")],h:"5,4 mil seguidores. Um link oculto na bio pode ser plataforma de delivery: confirmar antes.",x:["Cardápio digital","Encomendas online de bolos e salgados","Automação do WhatsApp","Google Perfil com horários"]},
+{n:"Waffle Station",c:"MA",s:"Cafeteria e waffles",p:"M",a:"Av. Guilherme Polydoro, 23, Jardim Zaíra",t:[],l:[ig("wafflestationmaua"),["iFood","https://www.ifood.com.br/delivery/maua-sp/waffle-station-parque-sao-vicente/b7377311-0483-49db-bd55-70bd00252480"]],h:"O link principal da bio leva ao iFood.",x:["Pedido próprio para retirada no balcão","Cardápio QR code na mesa","Cupons e fidelidade diretos","Google Perfil"]},
+{n:"Becas Café",c:"MA",s:"Cafés especiais e cestas",p:"M",a:"Não encontrado",t:[],l:[ig("becascafe")],h:"13,9 mil seguidores. Três links da bio não verificados.",x:["Loja online de cestas com data de entrega","Cardápio QR code","Automação de pedidos de cesta no WhatsApp"]},
+{n:"Pizzaria Tradição",c:"MA",s:"Pizzaria a lenha",p:"M",a:"Não encontrado",t:["(11) 93056-6259"],l:[ig("pizzariatradica")],h:"Posts esparsos; endereço não aparece em lugar nenhum.",x:["Cardápio digital com pedido","Google Perfil com endereço","Chatbot no WhatsApp","Calendário de conteúdo"]},
+{n:"Mamadi Marmitaria",c:"MA",s:"Marmitas fit sob encomenda",p:"M",a:"Não encontrado",t:["(11) 94706-7693"],l:[ig("mamadi.marmitaria")],h:"Kits e preços só pelo WhatsApp. Último post em 10/2025.",x:["Catálogo online de kits com preços","Assinatura semanal online","Cobrança automática via Pix","Bot com o cardápio da semana"]},
+{n:"Aline Cris Correia – Bolos e Kit Festa",c:"MA",s:"Bolos e kit festa",p:"M",a:"Não encontrado",t:[],l:[ig("alinecriscorreia")],h:"6 mil seguidores. Orçamentos só pelo WhatsApp.",x:["Portfólio online","Formulário de orçamento","Página de kits com preços","Agenda de datas"]},
+{n:"Pastelaria da Rosa Central",c:"MA",s:"Pastelaria",p:"M",a:"Não encontrado",t:[],l:[ig("pastelaria.da.rosa")],h:"7,2 mil seguidores, prêmio “Queridinhos de Mauá 2023”. Sem telefone nem endereço; confirmar se está ativa.",x:["Link na bio com cardápio digital","Google Perfil com endereço e horário","Pedido online e delivery","Rotina de conteúdo"]},
+{n:"M&C Pastéis e Salgados",c:"MA",s:"Pastelaria em feiras",p:"B",a:"Feira da Avenida Portugal",t:[],l:[ig("mcpasteisesalgados")],h:"Negócio itinerante, só WhatsApp.",x:["Cardápio QR code na barraca","Encomendas de salgados para festas","Google Perfil"]},
+{n:"Dom Pizza Mauá",c:"MA",s:"Pizzaria (18h às 4h)",p:"B",a:"Av. Queiroz Pedroso, 410",t:["(11) 99925-4366"],l:[ig("dom.pizzamaua")],h:"Último post em 02/2024: confirmar se ainda funciona.",x:["Cardápio digital com pedido online","Chatbot 24h para a madrugada","Reativar o Instagram","Google Perfil"]},
+// ===== Mauá — comércio e serviços
+{n:"Pitoco Kids",c:"MA",s:"Moda infantil, 2 lojas",p:"A",a:"Av. Ayrton Senna da Silva, 452, Vila Santa Cecília, CEP 09380-440 · Av. Barão de Mauá, 5342, Jardim Itapeva, CEP 09341-550",t:["(11) 98378-7345","(11) 94006-1268"],l:[ig("pitocokidsoficial"),fb("https://www.facebook.com/pitocokidsoficial/"),lt("https://linktr.ee/Pitocokidsoficial")],h:"18,8 mil seguidores. Diz vender “para todo o Brasil”, mas só por WhatsApp e grupos VIP.",x:["Loja virtual com filtro por tamanho e frete","Estoque unificado das 2 lojas","Atendimento automático por unidade","Disparos para os grupos VIP"]},
+{n:"Dark Rose Moda Feminina",c:"MA",s:"Moda feminina",p:"A",a:"Rua Campos Sales, 98 B, Centro",t:["(11) 98187-9899"],l:[ig("darkrose_rc")],h:"31,6 mil seguidores. Vende e entrega só pelo WhatsApp.",x:["Loja virtual com Pix e cartão","Catálogo no WhatsApp Business","Disparo automático de novidades","Google Perfil"]},
+{n:"P.R Cell",c:"MA",s:"Assistência de celular, 4 lojas",p:"A",a:"Unidades na Av. Portugal, no Centro e no Pq. São Vicente (números não encontrados)",t:["(11) 99513-7549"],l:[ig("p.r.cell__")],h:"8.443 seguidores, perfil verificado. Todo o atendimento num WhatsApp só.",x:["Orçamento online por modelo e defeito","Acompanhamento de ordem de serviço","Triagem automática para as 4 lojas","Loja online de acessórios","Google Perfil por unidade"]},
+{n:"Mercado Baratinho",c:"MA",s:"Mercadinho, 3 lojas",p:"A",a:"Parque São Vicente (ruas não encontradas)",t:[],l:[ig("mercadobaratinhooficial")],h:"Ofertas semanais divulgadas por grupo de WhatsApp. Sem delivery próprio.",x:["Encarte digital de ofertas","Pedido online com retirada ou delivery","Lista de transmissão automática","Programa de fidelidade"]},
+{n:"Angela Hair Studio",c:"MA",s:"Salão de beleza (23 anos)",p:"A",a:"Avenida Portugal, 91, Jardim Pilar",t:[],l:[ig("angelahairstudio"),lt("https://linktr.ee/Angelahairstudi")],h:"O botão “Agende seu horário” abre só o WhatsApp.",x:["Agenda online por profissional","Lembretes e confirmação automáticos","Site com portfólio de noivas e mechas","Sinal via Pix","Captação de avaliações"]},
+{n:"Pet Shop São Vicente",c:"MA",s:"Banho e tosa",p:"A",a:"Rua Presidente Carlos Luz, 41, Parque São Vicente, CEP 09371-230",t:["(11) 4061-1365","(11) 94061-1365"],l:[ig("petshopsaovicente"),fb("https://www.facebook.com/petsaovicente"),lt("https://linktr.ee/petshopsaovicente")],h:"5.795 seguidores. “Agende no WhatsApp”; sem agenda online.",x:["Agendamento online de banho e tosa","Aviso automático de “pet pronto”","Pacotes ou assinatura mensal","Loja de ração com delivery","Google Perfil"]},
+{n:"Espaço Renova",c:"MA",s:"Estética biomédica",p:"A",a:"Não encontrado",t:["(11) 97584-2958"],l:[ig("esprenova")],h:"Contato só pelo WhatsApp. Sem site nem agendamento.",x:["Agendamento online de avaliação","Site com procedimentos","Triagem automática no WhatsApp","Lembretes de retorno","Google Perfil"]},
+{n:"Sabino Calçados",c:"MA",s:"Calçados",p:"A",a:"Rua Haiti, 193, Parque das Américas",t:["(11) 4547-4099","(11) 93072-3086"],l:[ig("sabino_calcados")],h:"Só link de WhatsApp. Sem site nem catálogo.",x:["Catálogo digital por numeração","Loja online com retirada na loja","WhatsApp Business com catálogo","Google Perfil"]},
+{n:"DMC Eletropeças",c:"MA",s:"Autopeças elétricas",p:"A",a:"Rua Alonso de Vasconcelos Pacheco, 777, Vila Bocaina",t:["(11) 4544-5477","(11) 94009-2302"],l:[ig("dmceletropecas")],h:"Posta peças toda semana, mas todo orçamento é manual.",x:["Catálogo pesquisável por veículo","Orçamento automático no WhatsApp","Vitrine com preços","Venda B2B para oficinas","Google Perfil"]},
+{n:"Casa Lino",c:"MA",s:"Material de construção",p:"MA",a:"Rua Raimundo Correia, 439, Feital",t:["(11) 4576-4163"],l:[ig("casalinomaua")],h:"Divulga financiamento de material, mas o único link é um checkout da Kiwify.",x:["Site com simulador de financiamento","Orçamento por lista de materiais","Catálogo de produtos","Chatbot no WhatsApp","Google Perfil"]},
+{n:"B'Lucca Planejados",c:"MA",s:"Móveis planejados",p:"MA",a:"Não encontrado",t:["(11) 97039-6182"],l:[ig("bluccaplanejados")],h:"Só WhatsApp. Sem site nem portfólio.",x:["Site com portfólio de projetos","Orçamento com medidas e fotos","Qualificação automática de leads","Google Perfil com avaliações"]},
+{n:"Jean Barber",c:"MA",s:"Barbearia",p:"MA",a:"Rua Zina… (incompleto)",t:["(11) 97479-7723"],l:[ig("barbershop.jean")],h:"Atende por ordem de chegada.",x:["Agenda online ou fila virtual","Plano de assinatura mensal","Google Perfil","Captação de avaliações"]},
+{n:"Amigo Pet",c:"MA",s:"Pet shop",p:"M",a:"Não encontrado",t:["(11) 95000-1530"],l:[ig("amigopetmaua")],h:"“Agende seu horário” leva ao WhatsApp.",x:["Agendamento online","Lembretes de banho","Catálogo de produtos","Mensagens automáticas de horário e preço"]},
+{n:"Academia Extreme Fit",c:"MA",s:"Academia",p:"M",a:"Av. Dom José Gaspar, 1723, Jardim São Judas, CEP 09370-696",t:["(11) 97588-8578"],l:[ig("extremefitmaua"),["bio.site","https://bio.site/extremefitmaua"]],h:"Planos num PDF do Google Drive; matrícula pelo WhatsApp.",x:["Página de planos","Matrícula e assinatura online","Automação de leads","Agenda de avaliação física"]},
+{n:"BodyFit",c:"MA",s:"Academia",p:"M",a:"Provável Estr. Mauá e Adutora Rio Claro, 1336, Jardim Paranavaí (confirmar)",t:["(11) 96092-5063"],l:[ig("bodyfitmaua")],h:"Aula grátis marcada só pelo WhatsApp.",x:["Matrícula e pagamento online","Agendamento de aula experimental","Área do aluno","Reativação automática de alunos"]},
+{n:"Sertec",c:"MA",s:"Peças e conserto de eletrodomésticos",p:"M",a:"Não encontrado",t:["(11) 4516-2830"],l:[ig("sertec_maua")],h:"Desde 1995. Sem site nem catálogo de peças.",x:["Catálogo de peças por modelo","Agendamento de conserto","Automação no WhatsApp","Google Perfil"]},
+{n:"Papelaria Mauá",c:"MA",s:"Papelaria e presentes",p:"M",a:"Não encontrado",t:["(11) 4516-2977"],l:[ig("papelariamaua")],h:"Só WhatsApp. Último sinal de atividade em 11/2025.",x:["Pedido de lista escolar online","Catálogo de presentes","Loja online com retirada","WhatsApp Business com catálogo"]},
+{n:"Studio Jéssica Chiarotti",c:"MA",s:"Nail designer e cursos",p:"M",a:"Vila Bocaina",t:[],l:[ig("espacojessicachiarotti")],h:"Só WhatsApp. Sem agenda online nem página de cursos.",x:["Agenda online","Página de venda dos cursos","Lembretes automáticos","Portfólio"]},
+{n:"Studio Concept Beauty",c:"MA",s:"Esmalteria e cursos",p:"M",a:"Av. José Moreira, Jardim Esperança",t:[],l:[ig("studio_conceptbeauty")],h:"Agenda manual. Confirmar se o link da bio já tem agenda.",x:["Agenda online","Venda online dos cursos","Lembretes","Catálogo de serviços com preços"]},
+{n:"RPG Fitness",c:"MA",s:"Moda fitness",p:"M",a:"Não encontrado",t:[],l:[ig("rpgfitnesslojamaua")],h:"6 mil seguidores, sem link nem telefone.",x:["Loja virtual","Catálogo no WhatsApp","Link de compra na bio","Google Perfil"]},
+// ===== Paranapiacaba
+{n:"Bar da Zilda",c:"PA",s:"Bar e restaurante",p:"A",a:"R. Direita, 420, Paranapiacaba, CEP 09150-230",t:["(11) 4439-0140","(11) 4439-0093"],l:[ig("bardazilda_paranapiacaba"),fb("https://www.facebook.com/BarDaZilda/")],h:"Abre fins de semana e feriados. Google 4,0 (2.473); TripAdvisor 2,9. Sem link na bio, site ou cardápio digital.",x:["Cardápio QR code para o pico de turistas","Página de reservas e eventos","Respostas automáticas no WhatsApp","Gestão de avaliações no TripAdvisor","Cardápio no Google Perfil"]},
+{n:"Restaurante Estação do Sabor",c:"PA",s:"Self-service de comida baiana",p:"A",a:"Av. Antonio Olyntho, 485, Paranapiacaba, CEP 09150-040",t:["(11) 4439-0601","(11) 97626-1084"],l:[ig("estacaodosaborparanapiacaba"),fb("https://www.facebook.com/people/Restaurante-Esta%C3%A7%C3%A3o-do-Sabor-Paranapiacaba/100063707641851/")],h:"7.092 seguidores, Google 4,6 (332). A bio só tem um link de WhatsApp “Quero fazer uma reserva”.",x:["Reservas online com confirmação automática","Cardápio digital","Chatbot no WhatsApp","Página de links na bio","Orçamento para grupos e excursões"]},
+{n:"Restaurante Vila Inglesa",c:"PA",s:"Restaurante",p:"A",a:"Av. Fox, 438/440, Paranapiacaba, CEP 09150-070",t:["(11) 94102-8692","(11) 4439-0190"],l:[ig("restaurante_vilainglesa"),fb("https://www.facebook.com/profile.php?id=100063597249080")],h:"Atende grupos escolares sem link nem site. Google 4,3 (916).",x:["Página para escolas e excursões com orçamento","Agendamento de grupos","Cardápio digital","Respostas automáticas no WhatsApp","Fortalecer o Instagram"]},
+{n:"Café Infinito Olhar",c:"PA",s:"Cafeteria",p:"A",a:"Av. Fox, 435, Paranapiacaba, CEP 09150-070",t:["(11) 98555-6878"],l:[ig("cafeinfinitoolhar"),fb("https://www.facebook.com/cafeinfinitoolhar/"),["Heylink","http://heylink.me/cafeinfinitoolhar/"]],h:"10,6 mil seguidores, Google 4,6 (608). O Heylink só tem WhatsApp e Facebook.",x:["Cardápio digital","Site simples com horário e localização","Loja online de café em grão","Encomendas de bolos online","Melhorar a página de links"]},
+{n:"Cervejaria Mr. Balmann",c:"PA",s:"Restaurante e choperia",p:"A",a:"Av. Manoel Ferraz de Campos Salles, 451/452, Paranapiacaba",t:["(11) 99639-7416"],l:[ig("mr.balmann"),fb("https://www.facebook.com/mr.balmann/")],h:"7.718 seguidores. O link da bio é um Google Forms improvisado.",x:["Sistema de reservas ou pedidos no lugar do formulário","Cardápio digital","Site","Automação no WhatsApp","Venda de chope e growler para retirada"]},
+{n:"Pousada SPA Milenar",c:"PA",s:"Pousada com spa",p:"A",a:"Caminho do Hospital Velho, 310, Paranapiacaba",t:["(11) 99895-0806"],l:[ig("pousadaspamilenar"),["WhatsApp","https://wa.me/message/HFG4CVD7XA64F1"]],h:"Reservas só pelo WhatsApp. Último post em 11/2025.",x:["Site com motor de reservas","Calendário de disponibilidade","Sinal via Pix","Venda de pacotes de spa","Respostas automáticas (tarifas, check-in)"]},
+{n:"Pousada Tangará",c:"PA",s:"Hospedagem familiar (B&B)",p:"A",a:"Av. Manoel Ferraz de Campos Salles, 563, Paranapiacaba",t:["(11) 97892-2293","(11) 96866-8019"],l:[ig("pousadatangara.paranapiacaba"),fb("https://www.facebook.com/Pousada-Tangara-1573956126201780")],h:"2.982 seguidores. Reservas só pelo WhatsApp, sem site.",x:["Site com reservas online","Calendário de disponibilidade","Sinal via Pix","Respostas automáticas no WhatsApp"]},
+{n:"Apiaca Casa de Chá & Restaurante",c:"PA",s:"Restaurante e casa de chá",p:"MA",a:"Rua da Estação, 400, Paranapiacaba",t:["(11) 4439-0093"],l:[ig("apiacaparanapiacaba"),fb("https://www.facebook.com/ApiacaParanAPIACAba/")],h:"3.231 seguidores. Sem link na bio, site ou cardápio.",x:["Cardápio digital","Reservas online de chá da tarde","Página de links na bio","WhatsApp Business com catálogo"]},
+{n:"Hospedaria Vila Ferroviária",c:"PA",s:"Pousada",p:"MA",a:"Rua Rodrigues Quaresma, 35, Parte Alta, Paranapiacaba",t:["(11) 94383-1807"],l:[ig("hospedariavilaferroviaria")],h:"Negócio começando (Instagram criado em jul/2026). Reservas pelo WhatsApp.",x:["Site com reservas","Google Perfil","Cadastro no Booking","Montar o Instagram","Respostas automáticas"]},
+{n:"Restaurante Big Ben",c:"PA",s:"Self-service",p:"M",a:"Rua Antonio Olyntho, 481, Paranapiacaba",t:["(11) 4439-0296","(11) 4439-0254","(11) 99164-7367"],l:[ig("restaurantebigben")],h:"Agenda escolas e empresas sem link. Último post em 11/2025.",x:["Agendamento online de grupos","Cardápio digital","Cardápio no Google Perfil","Automação no WhatsApp"]},
+{n:"Railway Beer",c:"PA",s:"Bar, hambúrguer e cerveja de cambuci",p:"M",a:"Rua Antonio Thomaz, 19, Paranapiacaba",t:["(11) 4439-0048","(11) 99476-9557"],l:[ig("beerrailway"),fb("https://www.facebook.com/railwaybeer/")],h:"Último post em 08/2025. Link da bio leva só ao Facebook.",x:["Cardápio digital","Loja online da cerveja de cambuci","Site da marca","Gestão de redes sociais"]},
+{n:"Casa de Chá Raízes da Serra",c:"PA",s:"Café da manhã e chá da tarde",p:"M",a:"Av. Fox, 437, Paranapiacaba",t:["(11) 4439-0189"],l:[ig("casadecharaizes"),fb("https://www.facebook.com/casadecharaizesdaserra/")],h:"O único link da bio é o Threads.",x:["Cardápio digital","Reservas de café colonial","Encomendas de bolos online","Página de links na bio"]},
+{n:"Lanchonete Tô na Pista",c:"PA",s:"Lanches e porções",p:"M",a:"Av. Fox, 434/436, Paranapiacaba",t:["(11) 91358-4313"],l:[ig("to_na_pistaa")],h:"Abre sábado e domingo. Sem link na bio.",x:["Cardápio QR code","Pedido antecipado para retirada","Link na bio"]},
+{n:"Cachaçaria e Bistrô Paiol",c:"PA",s:"Bistrô e cachaçaria",p:"M",a:"Av. Fox, 442/444, Paranapiacaba",t:[],l:[ig("paiolparanapiacaba"),fb("https://www.facebook.com/profile.php?id=100063465343896")],h:"Sem telefone público, site ou cardápio.",x:["WhatsApp visível","Cardápio de cachaças e pratos","Loja online de cachaças","Google Perfil"]},
+{n:"Empório Irmãs da Lua",c:"PA",s:"Artesanato e presentes",p:"M",a:"Av. Manoel Ferraz de Campos Salles, 462, Paranapiacaba",t:["(11) 97343-1149"],l:[ig("irmas_dalua")],h:"6.315 seguidores. Um link da bio não pôde ser lido: confirmar se já há loja.",x:["Loja virtual para vender a turistas depois da visita","Catálogo no WhatsApp","Pix e frete integrados","Agendamento de atendimentos"]},
+{n:"Restaurante Castelinho",c:"PA",s:"Restaurante",p:"B",a:"Av. Manoel Ferraz de Campos Salles, 25, Paranapiacaba",t:["(11) 97196-8422"],l:[ig("restaurante_castelinho2020")],h:"305 seguidores; último post em 08/2025.",x:["Reativar o Instagram","Cardápio digital","Google Perfil"]},
+{n:"Bistrô Flor do Cambuci",c:"PA",s:"Bistrô",p:"B",a:"Rua Antônio Tomaz, 05, Paranapiacaba",t:["(11) 99729-1873"],l:[ig("flor_do_cambuci")],h:"Último post em 03/2024: confirmar se está ativo.",x:["Confirmar se está funcionando","Cardápio digital","Google Perfil"]},
+// ===== Rio Grande da Serra
+{n:"Comida Caseira da Selma",c:"RG",s:"Restaurante e marmitex",p:"A",a:"R. Marília, 240, CEP 09450-000",t:["(11) 4820-1505"],l:[rg("https://restaurantguru.com/Comida-Caseira-Da-Selma-Rio-Grande-da-Serra")],h:"Só WhatsApp, faz delivery. Google 4,5 (111). Sem Instagram encontrado.",x:["Cardápio do dia automático","Pedido online próprio de marmitas","Automação no WhatsApp","Plano semanal de marmitas","Criar o Instagram"]},
+{n:"Cravo & Canela Cafeteria",c:"RG",s:"Cafeteria e padaria",p:"A",a:"Av. Dom Pedro I, 165, Centro",t:["(11) 4821-4724"],l:[rg("https://restaurantguru.com/Cafeteria-Cravo-e-Canela-Rio-Grande-da-Serra")],h:"Só Facebook, sem Instagram. 229 avaliações no Google (4,6).",x:["Criar o Instagram e link na bio","Cardápio digital","Encomendas online de bolos e salgados","WhatsApp Business com catálogo","Delivery próprio"]},
+{n:"Cestas & Flores Mimariia's",c:"RG",s:"Floricultura e cestas",p:"A",a:"Rua Agostinho Cardoso, 65, Vila Figueiredo",t:["(11) 91452-4949"],l:[ig("cestas_mimariias")],h:"4.635 seguidores. Pedidos “pelo direct ou WhatsApp”.",x:["Loja virtual com agendamento de entrega","Pagamento por Pix ou link","Chatbot de pedidos","Lembrete de datas comemorativas","Google Perfil"]},
+{n:"Campos Pet",c:"RG",s:"Banho, tosa e táxi dog",p:"A",a:"Monte Alegre (Rua Piolim ou Estr. Guilherme Pinto Monteiro, 930; as fontes divergem)",t:["(11) 94339-0340","(11) 94125-1652"],l:[ig("campospetbanhoetosa")],h:"Agenda pelo WhatsApp. Sem site nem agenda online.",x:["Agendamento online com táxi dog","Chatbot no WhatsApp","Google Perfil com o endereço certo","Catálogo de rações","Programa de fidelidade"]},
+{n:"Cerealista Santo",c:"RG",s:"Produtos naturais",p:"MA",a:"Não encontrado",t:["(11) 94194-7962"],l:[ig("cerealistasanto")],h:"“Faça seu pedido” leva ao WhatsApp. Sem catálogo.",x:["Catálogo ou loja online com delivery","WhatsApp Business com catálogo","Google Perfil com endereço","Programa de fidelidade"]},
+{n:"Armazém Tia Dedé",c:"RG",s:"Restaurante e armazém",p:"M",a:"Av. Santo Antônio, 27",t:["(11) 95221-5526"],l:[rg("https://restaurantguru.com/Armazem-Tia-Dede-Rio-Grande-da-Serra")],h:"Google 4,8 (50). Só WhatsApp.",x:["Criar o Instagram","Cardápio do dia digital","Catálogo de marmitas no WhatsApp","Google Perfil"]},
+{n:"Pizzaria Abachioni",c:"RG",s:"Pizzaria delivery",p:"M",a:"Av. Santa Tereza, 1759",t:["(11) 97261-3315"],l:[ig("pizzariaabachioni"),rg("https://restaurantguru.com/Pizzaria-Abachioni-Rio-Grande-da-Serra")],h:"Pedidos pelo WhatsApp; Google 4,3 (188). Confirmar se a bio já tem link de cardápio.",x:["Cardápio digital com pedido online","Automação no WhatsApp","Programa de fidelidade","Organizar o Instagram"]},
+{n:"Amanda Maria Nails",c:"RG",s:"Unhas",p:"M",a:"Não encontrado",t:[],l:[ig("amandamarianails")],h:"Atende pelo direct, sem link na bio.",x:["Agendamento online","Link de WhatsApp na bio","Lembrete de manutenção a cada 15–21 dias","Google Perfil"]},
+{n:"Pastelaria do Biju",c:"RG",s:"Pastelaria delivery",p:"B",a:"Av. Jean Lieutaud, 135",t:["(11) 97513-5808"],l:[rg("https://restaurantguru.com/Pastelaria-do-Biju-Rio-Grande-da-Serra")],h:"Só WhatsApp e Facebook. Google 4,1 (158), algumas avaliações negativas.",x:["Cardápio digital com pedido online","Criar o Instagram","Gestão de avaliações","Respostas automáticas"]}
+];
+
+const slug=s=>s.normalize("NFD").replace(/[̀-ͯ]/g,"").toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"");
+DATA.forEach(e=>{e.id=slug(e.c+"-"+e.n)});
+
+/* ---------- estado ---------- */
+let ST={};          // id -> {e:{i:true}, p:{i:true}, done:bool, del:bool, nota:string}
+let db=null, filterCity="all", filterPrio="all", showDel=false, openId=null;
+const LSKEY="prospeccao-abc-v1";
+const get=id=>ST[id]||{e:{},p:{},done:false,del:false,nota:""};
+function lsLoad(){try{const v=localStorage.getItem(LSKEY);if(v)ST=JSON.parse(v)||{}}catch(_){}}
+function lsSave(){try{localStorage.setItem(LSKEY,JSON.stringify(ST))}catch(_){}}
+
+const writing={}, pending={};
+async function persist(id){
+  lsSave();
+  if(!db) return;
+  if(writing[id]){pending[id]=true;return}
+  writing[id]=true;
+  try{ await db.collection("progress").doc(id).set(JSON.parse(JSON.stringify(get(id)))); setSync(true) }
+  catch(err){ setSync(false, err && err.code) }
+  writing[id]=false;
+  if(pending[id]){pending[id]=false;persist(id)}
+}
+function update(id,fn){const s=JSON.parse(JSON.stringify(get(id)));fn(s);ST[id]=s;persist(id);renderAll()}
+
+function setSync(ok,code){
+  const el=document.getElementById("sync");
+  if(ok) el.textContent="Progresso salvo na nuvem: abre igual em qualquer aparelho.";
+  else if(code==="invalid_argument") el.textContent="Sem permissão para salvar na nuvem. O progresso fica só neste navegador.";
+  else el.textContent="Progresso salvo só neste navegador.";
+}
+
+/* ---------- render ---------- */
+const $=s=>document.querySelector(s);
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+function total(e){return ETAPAS.length+e.x.length}
+function doneCount(e){const s=get(e.id);return Object.values(s.e||{}).filter(Boolean).length+Object.values(s.p||{}).filter(Boolean).length}
+function visible(e){
+  const s=get(e.id);
+  if(!!s.del!==showDel) return false;
+  if(filterCity!=="all"&&e.c!==filterCity) return false;
+  if(filterPrio!=="all"&&(filterPrio==="A"?!(e.p==="A"||e.p==="MA"):e.p!==filterPrio)) return false;
+  const q=$("#q").value.trim().toLowerCase();
+  if(q){const hay=(e.n+" "+e.s+" "+e.a+" "+CITIES[e.c]).normalize("NFD").replace(/[̀-ͯ]/g,"").toLowerCase();
+    if(!hay.includes(q.normalize("NFD").replace(/[̀-ͯ]/g,""))) return false}
+  return true;
+}
+function sorted(list){return list.slice().sort((a,b)=>(get(a.id).done-get(b.id).done)||(PORD[a.p]-PORD[b.p])||a.n.localeCompare(b.n,"pt"))}
+
+function renderStats(){
+  const act=DATA.filter(e=>!get(e.id).del), del=DATA.length-act.length, done=act.filter(e=>get(e.id).done).length;
+  $("#sAtivos").textContent=act.length; $("#sDone").textContent=done; $("#sDel").textContent=del;
+  $("#bar").style.width=((done+del)/DATA.length*100)+"%";
+  $("#showDel").textContent=showDel?"Voltar para a lista":"Ver excluídos ("+del+")";
+}
+function renderChips(){
+  const cc=[["all","Todas"]].concat(Object.entries(CITIES));
+  $("#cityChips").innerHTML=cc.map(([k,v])=>`<button class="chip" data-city="${k}" aria-pressed="${filterCity===k}">${v}</button>`).join("");
+  const pc=[["all","Toda prioridade"],["A","Alta"],["M","Média"],["B","Baixa"]];
+  $("#prioChips").innerHTML=pc.map(([k,v])=>`<button class="chip" data-prio="${k}" aria-pressed="${filterPrio===k}">${v}</button>`).join("");
+}
+function renderMain(){
+  let html="", toc="";
+  for(const [code,name] of Object.entries(CITIES)){
+    const list=sorted(DATA.filter(e=>e.c===code&&visible(e)));
+    if(!list.length) continue;
+    html+=`<section class="city" id="city-${code}"><h2>${name} <small>${list.length} ${list.length===1?"estabelecimento":"estabelecimentos"}</small></h2><div class="grid">`;
+    toc+=`<details open><summary>${name} (${list.length})</summary><ol>`;
+    for(const e of list){
+      const s=get(e.id), d=doneCount(e), t=total(e);
+      html+=`<button class="card${s.done?" is-done":""}" data-open="${e.id}">
+        <div style="display:flex;justify-content:space-between;gap:8px;align-items:start"><h3>${esc(e.n)}</h3><span class="pill p-${e.p}">${PRIO[e.p]}</span></div>
+        <div class="seg">${esc(e.s)}</div>
+        <div class="row">${s.done?'<span class="pill ok">Prospecção concluída</span>':`<span>${d} de ${t} feitos</span>`}<span class="mini"><i style="width:${d/t*100}%"></i></span></div>
+      </button>`;
+      toc+=`<li><button data-open="${e.id}"><span class="dot p-${e.p}"></span><span class="${s.done?"ok":""}">${esc(e.n)}</span></button></li>`;
+    }
+    html+=`</div></section>`; toc+=`</ol></details>`;
+  }
+  $("#main").innerHTML=html||`<p class="empty">${showDel?"Nenhum estabelecimento excluído ainda. Quando concluir a prospecção de um, abra o cartão e use “Excluir estabelecimento”.":"Nenhum estabelecimento com esses filtros."}</p>`;
+  $("#toc").innerHTML=toc||`<p class="hint">Nada para mostrar.</p>`;
+}
+function renderAll(){
+  renderStats();renderChips();renderMain();
+  if(openId&&$("#dlg").open){
+    const a=document.activeElement, fid=a&&a.id;
+    if(fid==="nota") return;            // não interrompe quem está digitando
+    renderDialog(openId,true);
+    if(fid){const el=document.getElementById(fid); if(el) el.focus({preventScroll:true})}
+  }
+}
+
+function waLink(p){const d=p.replace(/\D/g,"");return d.length===11&&d[2]==="9"?"https://wa.me/55"+d:null}
+function renderDialog(id,keep){
+  const e=DATA.find(x=>x.id===id); if(!e) return;
+  const s=get(id), dlg=$("#dlg");
+  const scroll=keep?(dlg.querySelector(".m-scroll")||{}).scrollTop:0;
+  const nota=keep&&document.getElementById("nota")?document.getElementById("nota").value:(s.nota||"");
+  const phones=e.t.length?e.t.map(p=>{const w=waLink(p);return `<div class="phone"><code>${p}</code><button class="sbtn" data-copy="${p}">Copiar</button>${w?`<a class="sbtn" href="${w}" target="_blank" rel="noopener">WhatsApp</a>`:""}</div>`}).join(""):"Não encontrado";
+  const links=e.l.length?`<div class="links">${e.l.map(([lab,url])=>`<a href="${esc(url)}" target="_blank" rel="noopener">${esc(lab)}</a>`).join("")}</div>`:"Não encontrado";
+  const chk=(grp,i,txt,on)=>`<label class="check"><input type="checkbox" id="c-${grp}-${i}" data-grp="${grp}" data-i="${i}" ${on?"checked":""}><span>${esc(txt)}</span></label>`;
+  dlg.innerHTML=`<div class="m-scroll" style="max-height:calc(100vh - 32px);overflow:auto">
+    <div class="m-head"><div style="min-width:0"><h2 id="dName">${esc(e.n)}</h2>
+      <div class="meta"><span>${CITIES[e.c]}</span>·<span>${esc(e.s)}</span><span class="pill p-${e.p}">Prioridade ${PRIO[e.p]}</span></div></div>
+      <button class="x" data-close aria-label="Fechar">×</button></div>
+    <div class="m-body">
+      <dl class="info">
+        <dt>Endereço</dt><dd>${esc(e.a)}</dd>
+        <dt>Telefones</dt><dd>${phones}</dd>
+        <dt>Links</dt><dd>${links}</dd>
+        <dt>Situação hoje</dt><dd>${esc(e.h)}</dd>
+      </dl>
+      <fieldset><legend>Etapas da prospecção</legend>${ETAPAS.map((t,i)=>chk("e",i,t,s.e&&s.e[i])).join("")}</fieldset>
+      <fieldset><legend>Propostas para oferecer</legend>${e.x.map((t,i)=>chk("p",i,t,s.p&&s.p[i])).join("")}</fieldset>
+      <div><label for="nota" style="font-family:var(--display);font-weight:700;display:block;margin-bottom:6px">Anotações</label>
+      <textarea id="nota" placeholder="Ex.: falei com o dono, pediu retorno sexta à tarde">${esc(nota)}</textarea></div>
+    </div>
+    <div class="m-foot">
+      ${s.del?`<span class="hint">Este estabelecimento está excluído da lista.</span><button class="btn primary" data-restore>Restaurar na lista</button>`:
+      `<label class="check"><input type="checkbox" id="c-done" data-done ${s.done?"checked":""}><span>Já fiz a prospecção</span></label>
+      <div id="delZone">${s.done?`<button class="btn danger" data-del>Excluir estabelecimento</button>`:`<button class="btn danger" disabled title="Marque “Já fiz a prospecção” primeiro">Excluir estabelecimento</button>`}</div>`}
+    </div></div>`;
+  if(keep) dlg.querySelector(".m-scroll").scrollTop=scroll||0;
+}
+function openDlg(id){openId=id;renderDialog(id);const d=$("#dlg");if(!d.open)d.showModal()}
+function closeDlg(){saveNota();$("#dlg").close();openId=null}
+
+let notaTimer=null;
+function saveNota(){if(!openId)return;const el=document.getElementById("nota");if(!el)return;clearTimeout(notaTimer);
+  if((get(openId).nota||"")!==el.value){const id=openId,v=el.value;const s=JSON.parse(JSON.stringify(get(id)));s.nota=v;ST[id]=s;persist(id)}}
+
+function toast(t){const el=$("#toast");el.textContent=t;el.hidden=false;clearTimeout(toast._t);toast._t=setTimeout(()=>el.hidden=true,2200)}
+
+/* ---------- eventos ---------- */
+document.addEventListener("click",ev=>{
+  const o=ev.target.closest("[data-open]"); if(o){openDlg(o.dataset.open);return}
+  const c=ev.target.closest("[data-city]"); if(c){filterCity=c.dataset.city;renderAll();return}
+  const p=ev.target.closest("[data-prio]"); if(p){filterPrio=p.dataset.prio;renderAll();return}
+  if(ev.target.closest("#showDel")){showDel=!showDel;$("#showDel").setAttribute("aria-pressed",showDel);renderAll();return}
+  if(ev.target.closest("[data-close]")){closeDlg();return}
+  const cp=ev.target.closest("[data-copy]"); if(cp){const v=cp.dataset.copy;
+    Promise.resolve().then(()=>navigator.clipboard.writeText(v)).then(()=>toast("Copiado: "+v)).catch(()=>{const r=document.createRange();r.selectNodeContents(cp.previousElementSibling);const s=getSelection();s.removeAllRanges();s.addRange(r);toast("Número selecionado: use Ctrl+C")});return}
+  if(ev.target.closest("[data-del]")){
+    $("#delZone").innerHTML=`<div class="confirm"><span>Tirar da lista?</span><button class="btn danger" data-delok>Confirmar exclusão</button><button class="btn ghost" data-delno>Cancelar</button></div>`;return}
+  if(ev.target.closest("[data-delno]")){renderDialog(openId,true);return}
+  if(ev.target.closest("[data-delok]")){const id=openId,n=DATA.find(x=>x.id===id).n;saveNota();update(id,s=>{s.del=true});closeDlg();toast(n+" foi excluído. Veja em “Ver excluídos”.");return}
+  if(ev.target.closest("[data-restore]")){const id=openId;update(id,s=>{s.del=false;s.done=false});closeDlg();toast("Restaurado na lista");return}
+});
+document.addEventListener("change",ev=>{
+  const t=ev.target;
+  if(t.dataset.grp){const g=t.dataset.grp,i=t.dataset.i;saveNota();update(openId,s=>{s[g]=s[g]||{};if(t.checked)s[g][i]=true;else delete s[g][i]})}
+  else if(t.hasAttribute("data-done")){saveNota();update(openId,s=>{s.done=t.checked})}
+});
+document.addEventListener("input",ev=>{
+  if(ev.target.id==="q"){renderMain();return}
+  if(ev.target.id==="nota"){clearTimeout(notaTimer);notaTimer=setTimeout(saveNota,800)}
+});
+$("#dlg").addEventListener("close",()=>{saveNota();openId=null});
+$("#dlg").addEventListener("click",ev=>{if(ev.target===ev.currentTarget)closeDlg()});
+
+/* ---------- início ---------- */
+lsLoad(); renderAll(); setSync(false);
+(async()=>{
+  try{ db = window.claude && await window.claude.use("db") }catch(_){ db=null }
+  if(!db){ setSync(false); return }
+  db.collection("progress").onSnapshot(snap=>{
+    const next={};
+    snap.docs.forEach(d=>{ if(d.exists) next[d.id]=d.data() });
+    // primeira vez: leva para a nuvem o que já estava salvo só no navegador
+    if(snap.empty && Object.keys(ST).length && !persist._migrated){persist._migrated=true;Object.keys(ST).forEach(id=>persist(id));return}
+    ST=next; lsSave(); setSync(true); renderAll();
+  },err=>{ db=null; setSync(false, err&&err.code) });
+})();
+</script>
