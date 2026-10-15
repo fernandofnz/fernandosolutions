@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Fernando Solutions · Prospecção</title>
+  <link rel="icon" href="/img/logo-fernando.webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=Figtree:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap">
+  <link rel="stylesheet" href="/css/prospeccao.css?v=1">
+</head>
+<body>
+<div id="app" class="locked" aria-hidden="true">
+<div class="wrap">
+  <header class="top">
+    <div style="min-width:0;flex:1 1 320px;display:grid;gap:4px">
+      <div class="brand">
+        <div class="logo"><img class="logo-img" alt="Logo Fernando Solutions"></div>
+        <div style="min-width:0">
+          <div class="eyebrow">Prospecção · ABC e Serra</div>
+          <h1>Fernando Solutions</h1>
+          <p class="sub">Ribeirão Pires, Mauá, Paranapiacaba e Rio Grande da Serra · levantamento de 14/10/2026</p>
+        </div>
+      </div>
+      <div class="bar" aria-hidden="true"><i id="bar"></i></div>
+      <div class="sync" id="sync"></div>
+    </div>
+    <div style="display:grid;gap:12px;justify-items:end">
+      <div class="me" id="meBox"></div>
+      <div class="stats">
+        <div class="stat"><b id="sAtivos">0</b><span>Na lista</span></div>
+        <div class="stat"><b id="sDone">0</b><span>Concluídos</span></div>
+        <div class="stat"><b id="sDel">0</b><span>Excluídos</span></div>
+      </div>
+    </div>
+  </header>
+
+  <div class="tabs" role="tablist">
+    <button class="tab" role="tab" id="tabList" aria-selected="true" data-tab="list">Estabelecimentos</button>
+    <button class="tab" role="tab" id="tabAdmin" aria-selected="false" data-tab="admin" hidden>Cadastros <span class="badge" id="pendBadge" hidden>0</span></button>
+  </div>
+
+  <div id="viewList">
+    <div class="tools">
+      <input type="search" id="q" placeholder="Buscar por nome, segmento ou bairro" aria-label="Buscar estabelecimento">
+      <div class="chips" id="cityChips" role="group" aria-label="Filtrar por cidade"></div>
+      <div class="chips" id="prioChips" role="group" aria-label="Filtrar por prioridade"></div>
+      <div class="chips"><button class="chip" id="showDel" aria-pressed="false">Ver excluídos</button><button class="chip chip-add" id="addBtn">+ Novo estabelecimento</button></div>
+    </div>
+    <div class="layout">
+      <nav class="toc" aria-label="Sumário">
+        <h2>Sumário</h2>
+        <div id="toc"></div>
+      </nav>
+      <main id="main"><p class="empty">Carregando estabelecimentos…</p></main>
+    </div>
+  </div>
+
+  <div id="viewAdmin" hidden>
+    <p class="sub" style="margin-top:16px">Pedidos de cadastro de funcionários. Aprove para liberar o login. As senhas ficam guardadas criptografadas e não aparecem aqui; se alguém esquecer, defina uma senha nova.</p>
+    <div class="tblwrap"><table class="tbl">
+      <thead><tr><th>Cor</th><th>Login</th><th>E-mail profissional</th><th>Pedido em</th><th>Senha</th><th>Situação</th><th>Ações</th></tr></thead>
+      <tbody id="admRows"></tbody>
+    </table></div>
+  </div>
+</div>
+</div>
+
+<div id="gate" role="dialog" aria-modal="true" aria-labelledby="gateTitle"></div>
+<dialog id="dlg" aria-labelledby="dName"></dialog>
+<div class="toast" id="toast" hidden></div>
+
+<script src="/js/prospeccao.js?v=1"></script>
+</body>
+</html>

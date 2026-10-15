@@ -1,0 +1,20 @@
+{
+  "name": "prospeccao-fernando-solutions",
+  "version": "1.0.0",
+  "description": "Prospecção de estabelecimentos do ABC e Serra, com login de funcionários e aprovação do administrador.",
+  "main": "src/server.js",
+  "private": true,
+  "author": "Fernando Quinelato",
+  "scripts": {
+    "start": "node src/server.js"
+  },
+  "engines": {
+    "node": ">=22.13"
+  },
+  "type": "commonjs",
+  "dependencies": {
+    "@libsql/client": "^0.18.0",
+    "cookie-session": "^2.1.1",
+    "express": "^5.2.1"
+  }
+}

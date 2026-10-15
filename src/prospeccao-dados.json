@@ -1,0 +1,2439 @@
+{
+ "etapas": [
+  "Pesquisei o perfil e anotei a dor principal",
+  "Montei a demonstração com os produtos da loja",
+  "Enviei o primeiro contato (WhatsApp ou direct)",
+  "Fiz o retorno depois de 3 dias",
+  "Apresentei a proposta e o preço"
+ ],
+ "estabelecimentos": [
+  {
+   "n": "Restaurante Família Eiras",
+   "c": "RP",
+   "s": "Restaurante self-service (desde 1978)",
+   "p": "A",
+   "a": "R. Euclides da Cunha, 91, Centro, CEP 09400-220",
+   "t": [
+    "(11) 4828-1176",
+    "(11) 99611-1176"
+   ],
+   "l": [
+    [
+     "Instagram",
+     "https://www.instagram.com/restaurante_familia_eiras/"
+    ],
+    [
+     "Facebook",
+     "https://www.facebook.com/restauranteeiras/"
+    ],
+    [
+     "Restaurant Guru",
+     "https://restaurantguru.com.br/Familia-Eiras-Ribeirao-Pires"
+    ]
+   ],
+   "h": "Google 4,5 com 1.290 avaliações. Link da bio só abre o WhatsApp. Sem site nem cardápio digital.",
+   "x": [
+    "Cardápio digital com QR code (inclui preço do quilo)",
+    "Cardápio do dia automático no WhatsApp",
+    "Pedido de marmita online sem taxa",
+    "Corrigir horário no Google Perfil",
+    "Site simples com cardápio do dia"
+   ],
+   "id": "rp-restaurante-familia-eiras"
+  },
+  {
+   "n": "Brothers Rock Bar",
+   "c": "RP",
+   "s": "Bar com música ao vivo",
+   "p": "A",
+   "a": "Av. Francisco Monteiro, 143, Centro",
+   "t": [],
+   "l": [
+    [
+     "Instagram",
+     "https://www.instagram.com/brothers_rock_bar/"
+    ],
+    [
+     "Linktree",
+     "https://linktr.ee/brothers_rock_bar"
+    ],
+    [
+     "Facebook",
+     "https://www.facebook.com/brothersrockbar"
+    ]
+   ],
+   "h": "43,4 mil seguidores. O Linktree só tem TikTok e Facebook: sem cardápio, reservas ou agenda de shows.",
+   "x": [
+    "Cardápio QR code nas mesas",
+    "Site com agenda de shows",
+    "Reserva e lista online",
+    "Chatbot no WhatsApp",
+    "Programa de fidelidade"
+   ],
+   "id": "rp-brothers-rock-bar"
+  },
+  {
+   "n": "Rittorno Pizzaria",
+   "c": "RP",
+   "s": "Pizzaria e rodízio",
+   "p": "A",
+   "a": "Av. Francisco Monteiro, 647, loja 7, CEP 09400-310",
+   "t": [
+    "(11) 97292-6755",
+    "(11) 4822-4340"
+   ],
+   "l": [
+    [
+     "Instagram",
+     "https://www.instagram.com/rittorno_ribeiraopires/"
+    ],
+    [
+     "Linktree",
+     "https://linktr.ee/Rittorno.pizzaria"
+    ]
+   ],
+   "h": "9.741 seguidores. Linktree só com WhatsApp e telefones. Sem cardápio digital nem pedido online.",
+   "x": [
+    "Cardápio QR com pedido online",
+    "Reservas do rodízio por chatbot",
+    "Site",
+    "Cupom e programa de fidelidade",
+    "Google Perfil"
+   ],
+   "id": "rp-rittorno-pizzaria"
+  },
+  {
+   "n": "Pizzaria Fiorenttina",
+   "c": "RP",
+   "s": "Pizzaria, rodízio e delivery",
+   "p": "A",
+   "a": "Av. Francisco Monteiro, 647, Centro (confirmar se é casa diferente da Rittorno)",
+   "t": [
+    "(11) 93264-0032"
+   ],
+   "l": [
+    [
+     "Instagram",
+     "https://www.instagram.com/pizzariafiorenttina_/"
+    ]
+   ],
+   "h": "6.613 seguidores. Pedidos e reservas só por WhatsApp manual.",
+   "x": [
+    "Cardápio de delivery com pedido próprio",
+    "Chatbot de pedidos e reservas",
+    "QR code nas mesas",
+    "Programa de fidelidade",
+    "Google Perfil"
+   ],
+   "id": "rp-pizzaria-fiorenttina"
+  },
+  {
+   "n": "Consulado da Carne",
+   "c": "RP",
+   "s": "Restaurante de carnes com delivery",
+   "p": "A",
+   "a": "R. Miguel Prisco, 726, Centro",
+   "t": [
+    "(11) 97848-8752",
+    "(11) 4825-9175"
+   ],
+   "l": [
+    [
+     "Instagram",
+     "https://www.instagram.com/consuladodacarne/"
+    ]
+   ],
+   "h": "9.668 seguidores. Delivery de terça a sexta, 18h–22h, todo pelo WhatsApp.",
+   "x": [
+    "Pedido online próprio para o delivery",
+    "Cardápio QR code",
+    "Chatbot no WhatsApp",
+    "Site",
+    "Programa de fidelidade"
+   ],
+   "id": "rp-consulado-da-carne"
+  },
+  {
+   "n": "Padaria Maristela",
+   "c": "RP",
+   "s": "Padaria com 2 unidades",
+   "p": "A",
+   "a": "Un. I: R. Irineu Fernandes de Souza, 10 · Un. II: Av. Pref. Valdírio Prisco, 1193",
+   "t": [
+    "(11) 94164-6969",
+    "(11) 4827-4489"
+   ],
+   "l": [
+    [
+     "Instagram",
+     "https://www.instagram.com/padariamaristela/"
+    ]
+   ],
+   "h": "9.036 seguidores. Delivery só pelo iFood, sem link na bio. Telefones de lista de 2020: confirmar.",
+   "x": [
+    "Encomendas online de bolos, cestas e café da manhã",
+    "Cardápio digital",
+    "Site com as duas unidades",
+    "Chatbot de encomendas",
+    "Programa de fidelidade"
+   ],
+   "id": "rp-padaria-maristela"
+  },
+  {
+   "n": "Cindy Confeitaria",
+   "c": "RP",
+   "s": "Confeitaria (mais de 50 anos)",
+   "p": "A",
+   "a": "Centro (ver mapa)",
+   "t": [
+    "(11) 4828-5333"
+   ],
+   "l": [
+    [
+     "Instagram",
+     "https://www.instagram.com/confeitariacindy/"
+    ],
+    [
+     "Linktree",
+     "https://linktr.ee/confeitariacindy"
+    ],
+    [
+     "iFood",
+     "https://www.ifood.com.br/delivery/ribeirao-pires-sp/cindy-centro/ff154a25-7403-435c-8deb-60fa30de2b0c"
+    ],
+    [
+     "Mapa",
+     "https://goo.gl/maps/JiDGQjdpJS7PzvPQ9"
+    ]
+   ],
+   "h": "6.460 seguidores. Encomendas de bolo por WhatsApp manual; o resto vai pelo iFood.",
+   "x": [
+    "Catálogo de encomendas por sabor e tamanho",
+    "Sinal via Pix na encomenda",
+    "Chatbot de encomendas",
+    "Site",
+    "Pedido próprio fora do iFood"
+   ],
+   "id": "rp-cindy-confeitaria"
+  },
+  {
+   "n": "Café Colonial Di Fiore",
+   "c": "RP",
+   "s": "Café colonial (sáb e dom, 8h–12h30)",
+   "p": "A",
+   "a": "R. dos Alpes, 175, CEP 09414-100",
+   "t": [
+    "(11) 99686-2236"
+   ],
+   "l": [
+    [
+     "Instagram",
+     "https://www.instagram.com/cafe.difiore/"
+    ],
+    [
+     "Restaurant Guru",
+     "https://restaurantguru.com.br/Cafe-Colonial-Di-Fiore-Ribeirao-Pires"
+    ]
+   ],
+   "h": "17,7 mil seguidores e Google 4,7 (297). Atende por ordem de chegada; Google sem horário.",
+   "x": [
+    "Reserva ou fila online",
+    "Venda antecipada",
+    "Cardápio digital",
+    "Chatbot de horário e preço",
+    "Google Perfil com horário"
+   ],
+   "id": "rp-cafe-colonial-di-fiore"
+  },
+  {
+   "n": "Restaurante Quintal de Casa",
+   "c": "RP",
+   "s": "Restaurante e bar",
+   "p": "A",
+   "a": "R. Alvorada, 20, CEP 09403-100",
+   "t": [
+    "(11) 94519-5855"
+   ],
+   "l": [
+    [
+     "Restaurant Guru",
+     "https://restaurantguru.com.br/Restaurante-Quintal-de-Casa-Ribeirao-Pires"
+    ]
+   ],
+   "h": "Google 4,8 com 426 avaliações, mas sem Instagram nem site encontrados.",
+   "x": [
+    "Criar o Instagram",
+    "Otimizar o Google Perfil",
+    "Site com cardápio",
+    "Cardápio QR code",
+    "Reservas e pedidos automatizados no WhatsApp"
+   ],
+   "id": "rp-restaurante-quintal-de-casa"
+  },
+  {
+   "n": "Pesqueiro Nova Tropical",
+   "c": "RP",
+   "s": "Pesqueiro com restaurante",
+   "p": "MA",
+   "a": "Av. Kaethe Richers, 1659, Ponte Seca, CEP 09411-700",
+   "t": [
+    "(11) 94717-5799"
+   ],
+   "l": [
+    [
+     "Instagram",
+     "https://www.instagram.com/pesqueiro_tropical/"
+    ],
+    [
+     "Restaurant Guru",
+     "https://restaurantguru.com.br/Pesqueiro-Nova-Tropical-Ribeirao-Pires"
+    ]
+   ],
+   "h": "Google 4,6 com 1.504 avaliações. O cardápio é uma arte do Canva.",
+   "x": [
+    "Cardápio digital de verdade com QR code",
+    "Site com preços de pesca e restaurante",
+    "Venda de day-use online",
+    "Chatbot"
+   ],
+   "id": "rp-pesqueiro-nova-tropical"
+  },
+  {
+   "n": "Blessed Coffee",
+   "c": "RP",
+   "s": "Cafeteria e almoço",
+   "p": "MA",
+   "a": "Av. Francisco Monteiro, 1206, 1º andar, CEP 09406-300",
+   "t": [
+    "(11) 99603-5597"
+   ],
+   "l": [
+    [
+     "Instagram",
+     "https://www.instagram.com/blessedcoffeerp/"
+    ],
+    [
+     "Restaurant Guru",
+     "https://restaurantguru.com.br/Blessed-coffee-cafeteria-e-restaurante-Ribeirao-Pires"
+    ]
+   ],
+   "h": "Google 4,9. O link da bio abre o WhatsApp com “quero ver o cardápio”, que é enviado à mão.",
+   "x": [
+    "Cardápio QR code",
+    "Chatbot no WhatsApp",
+    "Pedidos e encomendas online",
+    "Google Perfil e conteúdo"
+   ],
+   "id": "rp-blessed-coffee"
+  },
+  {
+   "n": "Costelaria Rancho Tibiriçá",
+   "c": "RP",
+   "s": "Costelaria",
+   "p": "MA",
+   "a": "Rod. Índio Tibiriçá, 4401, km 43,6, CEP 09410-000",
+   "t": [
+    "(11) 94490-9490"
+   ],
+   "l": [
+    [
+     "Restaurant Guru",
+     "https://restaurantguru.com/Costelaria-Rancho-Tibirica-Ribeirao-Pires"
+    ]
+   ],
+   "h": "Google 4,2 (199). Sem site nem rede social.",
+   "x": [
+    "Criar o Instagram",
+    "Google Perfil",
+    "Site com cardápio",
+    "Cardápio QR code",
+    "Reservas e pedidos por chatbot"
+   ],
+   "id": "rp-costelaria-rancho-tibirica"
+  },
+  {
+   "n": "Botec Santa Rita",
+   "c": "RP",
+   "s": "Boteco e lanches",
+   "p": "MA",
+   "a": "R. Olavo Bilac, 169, Colônia",
+   "t": [
+    "(11) 97315-2008"
+   ],
+   "l": [
+    [
+     "Instagram",
+     "https://www.instagram.com/botecosantarita/"
+    ]
+   ],
+   "h": "Cardápio e combos aparecem só em vídeos. Link da bio só para o WhatsApp.",
+   "x": [
+    "Cardápio QR code",
+    "Pedido online de lanches",
+    "Chatbot no WhatsApp",
+    "Google Perfil",
+    "Programa de fidelidade"
+   ],
+   "id": "rp-botec-santa-rita"
+  },
+  {
+   "n": "Restaurante Gamboa",
+   "c": "RP",
+   "s": "Comida caseira e delivery",
+   "p": "M",
+   "a": "Av. Francisco Monteiro, 1126, Santana, CEP 09406-300",
+   "t": [
+    "(11) 96907-7231",
+    "(11) 4824-6437"
+   ],
+   "l": [
+    [
+     "Instagram",
+     "https://www.instagram.com/gamboa_restaurante/"
+    ],
+    [
+     "Facebook",
+     "https://www.facebook.com/GamboaRestaurante/"
+    ]
+   ],
+   "h": "Google 4,4 (426). Instagram parado desde dez/2024.",
+   "x": [
+    "Cardápio do dia digital",
+    "Pedido de marmita online",
+    "Chatbot no WhatsApp",
+    "Reativar redes e Google Perfil"
+   ],
+   "id": "rp-restaurante-gamboa"
+  },
+  {
+   "n": "Açaiteria Pires",
+   "c": "RP",
+   "s": "Açaí",
+   "p": "M",
+   "a": "Centro",
+   "t": [],
+   "l": [
+    [
+     "Instagram",
+     "https://www.instagram.com/acaipiresrp/"
+    ],
+    [
+     "Instagram",
+     "https://www.instagram.com/acaipires/"
+    ]
+   ],
+   "h": "“Pedidos somente por WhatsApp” e delivery pelo iFood.",
+   "x": [
+    "Pedido próprio com montagem do copo",
+    "Chatbot no WhatsApp",
+    "Cartão fidelidade digital",
+    "Google Perfil"
+   ],
+   "id": "rp-acaiteria-pires"
+  },
+  {
+   "n": "Açaí Formosa",
+   "c": "RP",
+   "s": "Açaí",
+   "p": "M",
+   "a": "Centro",
+   "t": [
+    "(11) 91753-8038"
+   ],
+   "l": [
+    [
+     "Instagram",
+     "https://www.instagram.com/acaiformosaribeiraopires/"
+    ]
+   ],
+   "h": "Delivery só pelo iFood e WhatsApp manual.",
+   "x": [
+    "Pedido online próprio sem taxa",
+    "Cardápio digital",
+    "Programa de fidelidade",
+    "Chatbot"
+   ],
+   "id": "rp-acai-formosa"
+  },
+  {
+   "n": "Restaurante & Café Havana",
+   "c": "RP",
+   "s": "Almoço e lanches",
+   "p": "M",
+   "a": "R. Boa Vista, Quiosque 01, Centro, CEP 09400-180",
+   "t": [
+    "(11) 4823-6268"
+   ],
+   "l": [],
+   "h": "Google 4,3 (277). Sem rede social própria; horários no Google inconsistentes.",
+   "x": [
+    "Criar o Instagram",
+    "Google Perfil com horário corrigido",
+    "Cardápio QR code",
+    "Pedidos no WhatsApp com automação"
+   ],
+   "id": "rp-restaurante-cafe-havana"
+  },
+  {
+   "n": "Buenos Burger",
+   "c": "RP",
+   "s": "Hamburgueria noturna",
+   "p": "M",
+   "a": "R. Augusto Maziero, 503, CEP 09403-400",
+   "t": [
+    "(11) 97140-7026"
+   ],
+   "l": [
+    [
+     "Restaurant Guru",
+     "https://restaurantguru.com.br/Buenos-Burguer-Ribeirao-Pires"
+    ]
+   ],
+   "h": "Google 5,0 (34). Sem rede social nem link de pedido.",
+   "x": [
+    "Cardápio digital e pedido online",
+    "Criar o Instagram",
+    "Chatbot no WhatsApp",
+    "Programa de fidelidade"
+   ],
+   "id": "rp-buenos-burger"
+  },
+  {
+   "n": "Fast-Food Caipira",
+   "c": "RP",
+   "s": "Lanchonete",
+   "p": "M",
+   "a": "Av. Fortuna, 19, Centro, CEP 09400-320",
+   "t": [],
+   "l": [
+    [
+     "Restaurant Guru",
+     "https://restaurantguru.com.br/Fast-Food-Caipira-Ribeirao-Pires"
+    ]
+   ],
+   "h": "Google 4,7 (23). Sem telefone, site ou rede social: abordagem presencial.",
+   "x": [
+    "Google Perfil com telefone",
+    "Criar o Instagram",
+    "Cardápio digital",
+    "Pedido por WhatsApp e online"
+   ],
+   "id": "rp-fast-food-caipira"
+  },
+  {
+   "n": "Me Amo Cafeteria",
+   "c": "RP",
+   "s": "Cafeteria",
+   "p": "B",
+   "a": "Não publicado",
+   "t": [],
+   "l": [
+    [
+     "Instagram",
+     "https://www.instagram.com/meamo.cafeteria/"
+    ]
+   ],
+   "h": "Bio só com link do Threads. Sem telefone nem endereço no perfil.",
+   "x": [
+    "Cardápio QR code",
+    "Google Perfil",
+    "WhatsApp visível com automação",
+    "Site simples"
+   ],
+   "id": "rp-me-amo-cafeteria"
+  },
+  {
+   "n": "Salão Miracle Hair",
+   "c": "RP",
+   "s": "Salão de beleza",
+   "p": "A",
+   "a": "R. Stella Bruna Cecchi Nardelli, 179",
+   "t": [
+    "(11) 94216-0211"
+   ],
+   "l": [
+    [
+     "Instagram",
+     "https://www.instagram.com/salaomiraclehair_/"
+    ]
+   ],
+   "h": "15 mil seguidores e vários reels em set–out/2026. Link da bio só abre o WhatsApp; sem agenda online nem site.",
+   "x": [
+    "Agendamento online por profissional e serviço",
+    "Lembrete automático contra faltas",
+    "Chatbot no WhatsApp",
+    "CRM de retorno de clientes",
+    "Landing page"
+   ],
+   "id": "rp-salao-miracle-hair"
+  },
+  {
+   "n": "Teruel Colchões",
+   "c": "RP",
+   "s": "Colchões e estofados",
+   "p": "A",
+   "a": "Rua Capitão José Gallo, 254, Centro",
+   "t": [],
+   "l": [
+    [
+     "Instagram",
+     "https://www.instagram.com/teruelcolchoes/"
+    ]
+   ],
+   "h": "Posta quase todo dia. O texto da bio aponta para um link que não existe.",
+   "x": [
+    "Catálogo ou loja virtual com preço e parcelamento",
+    "WhatsApp Business com catálogo",
+    "Link na bio",
+    "Google Perfil",
+    "Pós-venda automático"
+   ],
+   "id": "rp-teruel-colchoes"
+  },
+  {
+   "n": "Ótica Estância",
+   "c": "RP",
+   "s": "Ótica (16 anos)",
+   "p": "A",
+   "a": "Não aparece no perfil (confirmar no Google Maps)",
+   "t": [
+    "(11) 4825-1183",
+    "(11) 97272-1183"
+   ],
+   "l": [
+    [
+     "Instagram",
+     "https://www.instagram.com/oticaestancia/"
+    ]
+   ],
+   "h": "Só WhatsApp. Sem catálogo de armações nem agendamento de exame.",
+   "x": [
+    "Catálogo digital de armações",
+    "Agendamento de exame de vista",
+    "Chatbot de orçamento e status do pedido",
+    "Google Perfil com endereço",
+    "Lembrete de troca de óculos"
+   ],
+   "id": "rp-otica-estancia"
+  },
+  {
+   "n": "Clínica Elleven",
+   "c": "RP",
+   "s": "Estética",
+   "p": "A",
+   "a": "Não encontrado",
+   "t": [
+    "(11) 93585-3848"
+   ],
+   "l": [
+    [
+     "Instagram",
+     "https://www.instagram.com/ellevenestetica/"
+    ]
+   ],
+   "h": "5.914 seguidores. Link só para o WhatsApp; sem site.",
+   "x": [
+    "Agendamento online",
+    "Landing page de procedimentos",
+    "Chatbot no WhatsApp",
+    "Google Perfil com endereço",
+    "Pacotes de procedimentos"
+   ],
+   "id": "rp-clinica-elleven"
+  },
+  {
+   "n": "Espaço Pet",
+   "c": "RP",
+   "s": "Banho e tosa",
+   "p": "A",
+   "a": "Provável Av. Francisco Monteiro, 1060, Centro (confirmar)",
+   "t": [
+    "(11) 93309-5748",
+    "(11) 4824-6699"
+   ],
+   "l": [
+    [
+     "Instagram",
+     "https://www.instagram.com/espacopet.ribeirao/"
+    ]
+   ],
+   "h": "O botão “Agendar Aqui” abre só o WhatsApp.",
+   "x": [
+    "Agendamento online com lembrete",
+    "Pacotes ou assinatura de banhos",
+    "Chatbot no WhatsApp",
+    "Cadastro de pets com recorrência",
+    "Google Perfil"
+   ],
+   "id": "rp-espaco-pet"
+  },
+  {
+   "n": "Patinhas Pet Care",
+   "c": "RP",
+   "s": "Banho e tosa",
+   "p": "A",
+   "a": "R. Miguel Prisco, 1467",
+   "t": [
+    "(11) 97184-7410",
+    "(11) 4829-4076"
+   ],
+   "l": [
+    [
+     "Instagram",
+     "https://www.instagram.com/patinhasrp/"
+    ]
+   ],
+   "h": "“Agendamento antecipado” feito à mão pelo WhatsApp.",
+   "x": [
+    "Agendamento online",
+    "Lembrete automático de retorno",
+    "Chatbot no WhatsApp",
+    "Programa de fidelidade",
+    "Google Perfil"
+   ],
+   "id": "rp-patinhas-pet-care"
+  },
+  {
+   "n": "Elite Tecidos",
+   "c": "RP",
+   "s": "Tecidos e aviamentos",
+   "p": "A",
+   "a": "R. Miguel Prisco, 86, Centro",
+   "t": [
+    "(11) 4823-1688",
+    "(11) 4828-1489"
+   ],
+   "l": [
+    [
+     "Instagram",
+     "https://www.instagram.com/elite_tecidos/"
+    ]
+   ],
+   "h": "Loja tradicional (Lojas Elite, desde 1958). Só venda física, nenhum link na bio.",
+   "x": [
+    "Catálogo ou loja virtual (metro e kits para artesãs)",
+    "WhatsApp Business com catálogo",
+    "Lista de transmissão de novidades",
+    "Link na bio",
+    "Google Perfil"
+   ],
+   "id": "rp-elite-tecidos"
+  },
+  {
+   "n": "Flex Academia",
+   "c": "RP",
+   "s": "Academia",
+   "p": "A",
+   "a": "Não encontrado",
+   "t": [
+    "(11) 4823-1169"
+   ],
+   "l": [
+    [
+     "Instagram",
+     "https://www.instagram.com/flexacademiarp/"
+    ]
+   ],
+   "h": "Divulga plano de R$ 69,90 sem link, sem matrícula online e sem endereço no perfil.",
+   "x": [
+    "Página de matrícula com pagamento recorrente",
+    "Agendamento de aula experimental",
+    "Sistema de gestão de alunos",
+    "Link na bio com WhatsApp",
+    "Google Perfil com endereço"
+   ],
+   "id": "rp-flex-academia"
+  },
+  {
+   "n": "Academia Sabará",
+   "c": "RP",
+   "s": "Pilates, natação e hidroginástica",
+   "p": "A",
+   "a": "Não encontrado",
+   "t": [
+    "(11) 93417-9399"
+   ],
+   "l": [
+    [
+     "Instagram",
+     "https://www.instagram.com/_academiasabara/"
+    ]
+   ],
+   "h": "Atendimento só pelo WhatsApp da bio. Sem site nem agendamento de turmas.",
+   "x": [
+    "Reserva de vagas em turmas",
+    "Site com grade de horários",
+    "Matrícula e mensalidade online",
+    "Chatbot no WhatsApp",
+    "Google Perfil"
+   ],
+   "id": "rp-academia-sabara"
+  },
+  {
+   "n": "Depósito Ribeirão",
+   "c": "RP",
+   "s": "Material de construção (RP e RGS)",
+   "p": "A",
+   "a": "Av. Francisco Monteiro, 2703, Santa Luzia (RP) · Rua Venâncio Orsini, 71, Centro (Rio Grande da Serra)",
+   "t": [],
+   "l": [
+    [
+     "Instagram",
+     "https://www.instagram.com/depositoribeirao/"
+    ]
+   ],
+   "h": "Telefone só nos destaques do Instagram. Link da bio leva a uma arte do Canva; último post em 11/08/2025.",
+   "x": [
+    "Orçamento de obra com chatbot",
+    "Catálogo online",
+    "Google Perfil para as duas unidades",
+    "Site",
+    "Cadastro de pedreiros parceiros"
+   ],
+   "id": "rp-deposito-ribeirao"
+  },
+  {
+   "n": "Chácara Miyake",
+   "c": "RP",
+   "s": "Chácara para eventos",
+   "p": "A",
+   "a": "Centro Alto (número não encontrado)",
+   "t": [
+    "(11) 95043-9222"
+   ],
+   "l": [
+    [
+     "Instagram",
+     "https://www.instagram.com/chacaramiyake/"
+    ]
+   ],
+   "h": "Reservas por contato manual. Telefone tirado de um vídeo: confirmar.",
+   "x": [
+    "Calendário de disponibilidade",
+    "Reserva com sinal online",
+    "Site com fotos e preços",
+    "Chatbot de orçamento",
+    "Contrato digital"
+   ],
+   "id": "rp-chacara-miyake"
+  },
+  {
+   "n": "Clínica Danielle Casanova",
+   "c": "RP",
+   "s": "Clínica médica e estética",
+   "p": "M",
+   "a": "Av. Francisco Monteiro, sala 302, 3º andar",
+   "t": [],
+   "l": [
+    [
+     "Instagram",
+     "https://www.instagram.com/clinica_danielle_casanova/"
+    ],
+    [
+     "Linktree",
+     "https://linktr.ee/clinica_danielle_casanova"
+    ],
+    [
+     "Facebook",
+     "https://www.facebook.com/ClinicaDanielleCasanova/"
+    ],
+    [
+     "Google",
+     "https://g.page/ClinicaDanielleCasanova"
+    ]
+   ],
+   "h": "Já tem Google Perfil, mas não tem site nem agenda online.",
+   "x": [
+    "Site com páginas de procedimentos",
+    "Agendamento online de avaliação",
+    "Chatbot de triagem",
+    "Pós-procedimento e retorno automáticos"
+   ],
+   "id": "rp-clinica-danielle-casanova"
+  },
+  {
+   "n": "Ribeirão Auto Peças",
+   "c": "RP",
+   "s": "Autopeças",
+   "p": "M",
+   "a": "Av. Francisco Monteiro, 1255",
+   "t": [
+    "(11) 4827-1477"
+   ],
+   "l": [
+    [
+     "Instagram",
+     "https://www.instagram.com/ribeiraoautopecas_/"
+    ]
+   ],
+   "h": "Último post em 06/2024. Link da bio leva a uma arte estática.",
+   "x": [
+    "Orçamento automatizado no WhatsApp",
+    "Catálogo de peças por veículo",
+    "Google Perfil",
+    "Retomar as postagens"
+   ],
+   "id": "rp-ribeirao-auto-pecas"
+  },
+  {
+   "n": "MJ Box e Baú",
+   "c": "RP",
+   "s": "Fábrica de camas box",
+   "p": "M",
+   "a": "Não encontrado",
+   "t": [
+    "(11) 91361-1523"
+   ],
+   "l": [
+    [
+     "Instagram",
+     "https://www.instagram.com/fabricamj/"
+    ]
+   ],
+   "h": "Vende pelo WhatsApp e entrega na Grande SP. Último post em 11/2024.",
+   "x": [
+    "Catálogo com medidas e preços",
+    "Chatbot de orçamento",
+    "Site",
+    "Google Perfil"
+   ],
+   "id": "rp-mj-box-e-bau"
+  },
+  {
+   "n": "Pizzaria Sahara Premium",
+   "c": "MA",
+   "s": "Pizzaria",
+   "p": "A",
+   "a": "Av. Presidente Castelo Branco, 1633, Jardim Zaíra, CEP 09320-795",
+   "t": [
+    "(11) 4545-5655",
+    "(11) 96444-8816"
+   ],
+   "l": [
+    [
+     "Instagram",
+     "https://www.instagram.com/pizzariasaharapremium/"
+    ],
+    [
+     "Restaurant Guru",
+     "https://restaurantguru.com/Pizzaria-Sahara-Premium-Maua"
+    ]
+   ],
+   "h": "Nota 4,8, 2ª melhor pizzaria de Mauá no Restaurant Guru. Pedidos só pelo WhatsApp (a filial Guapituba já usa anota.ai).",
+   "x": [
+    "Cardápio digital com meia a meia, bordas e combos",
+    "Taxa de entrega por bairro",
+    "Chatbot de pedidos e status",
+    "Programa de fidelidade",
+    "Google Perfil com link de pedido"
+   ],
+   "id": "ma-pizzaria-sahara-premium"
+  },
+  {
+   "n": "Confeitaria do Alemão",
+   "c": "MA",
+   "s": "Confeitaria (desde 1972)",
+   "p": "A",
+   "a": "Av. Barão de Mauá, 1754",
+   "t": [
+    "(11) 4514-6582"
+   ],
+   "l": [
+    [
+     "Instagram",
+     "https://www.instagram.com/confeitariadoalemao/"
+    ],
+    [
+     "Linktree",
+     "https://linktr.ee/Confeitariadoalemao"
+    ]
+   ],
+   "h": "9,5 mil seguidores, posts quase diários. Os 3 botões do Linktree levam ao mesmo WhatsApp; sem catálogo nem preços.",
+   "x": [
+    "Catálogo de bolos com tamanhos e preços",
+    "Formulário de encomenda com data e sinal",
+    "Respostas automáticas no WhatsApp",
+    "Agendamento de retirada",
+    "Site com a história desde 1972"
+   ],
+   "id": "ma-confeitaria-do-alemao"
+  },
+  {
+   "n": "Merengue Cake",
+   "c": "MA",
+   "s": "Bolos e doces finos",
+   "p": "A",
+   "a": "Não publicado",
+   "t": [
+    "(11) 95076-7021"
+   ],
+   "l": [
+    [
+     "Instagram",
+     "https://www.instagram.com/merenguecakee/"
+    ]
+   ],
+   "h": "11,2 mil seguidores. “Faça seu pedido no WhatsApp” é o único canal.",
+   "x": [
+    "Catálogo com sabores e preços",
+    "Formulário de encomenda com data",
+    "Sinal via Pix",
+    "Respostas automáticas",
+    "Agenda de capacidade de produção"
+   ],
+   "id": "ma-merengue-cake"
+  },
+  {
+   "n": "La Casa das Esfihas Itapark",
+   "c": "MA",
+   "s": "Esfiharia delivery",
+   "p": "A",
+   "a": "Av. Itapark, 3642, Jardim Itapark",
+   "t": [
+    "(11) 99210-3235",
+    "(11) 98979-3392"
+   ],
+   "l": [
+    [
+     "Instagram",
+     "https://www.instagram.com/lacasadasesfihas_itapark/"
+    ],
+    [
+     "Linktree",
+     "https://linktr.ee/lacasadasesfihasitaparkoficial"
+    ]
+   ],
+   "h": "Pedidos 100% pelo WhatsApp. O perfil mostra 3 números diferentes.",
+   "x": [
+    "Cardápio digital com pedido online",
+    "Unificar o número e colocar chatbot",
+    "QR code para panfletos",
+    "Cupons automáticos",
+    "Google Perfil"
+   ],
+   "id": "ma-la-casa-das-esfihas-itapark"
+  },
+  {
+   "n": "Sabor Brasil Refeições",
+   "c": "MA",
+   "s": "Marmitex e refeições para empresas",
+   "p": "A",
+   "a": "Rua Havana, 185A, Parque das Américas, CEP 09351-020",
+   "t": [
+    "(11) 4547-5860"
+   ],
+   "l": [
+    [
+     "Instagram",
+     "https://www.instagram.com/saborbrasilmarmitex/"
+    ]
+   ],
+   "h": "3,8 mil seguidores. Atende delivery e empresas sem link de pedido nem cardápio.",
+   "x": [
+    "Cardápio do dia automático",
+    "Pedido de marmitex online",
+    "Portal de pedidos corporativos com fechamento mensal",
+    "Google Perfil"
+   ],
+   "id": "ma-sabor-brasil-refeicoes"
+  },
+  {
+   "n": "Padaria Nova Guapituba",
+   "c": "MA",
+   "s": "Padaria",
+   "p": "M",
+   "a": "Rua Haiti, 177, Parque das Américas",
+   "t": [],
+   "l": [
+    [
+     "Instagram",
+     "https://www.instagram.com/guapipaes_padaria/"
+    ]
+   ],
+   "h": "5,4 mil seguidores. Um link oculto na bio pode ser plataforma de delivery: confirmar antes.",
+   "x": [
+    "Cardápio digital",
+    "Encomendas online de bolos e salgados",
+    "Automação do WhatsApp",
+    "Google Perfil com horários"
+   ],
+   "id": "ma-padaria-nova-guapituba"
+  },
+  {
+   "n": "Waffle Station",
+   "c": "MA",
+   "s": "Cafeteria e waffles",
+   "p": "M",
+   "a": "Av. Guilherme Polydoro, 23, Jardim Zaíra",
+   "t": [],
+   "l": [
+    [
+     "Instagram",
+     "https://www.instagram.com/wafflestationmaua/"
+    ],
+    [
+     "iFood",
+     "https://www.ifood.com.br/delivery/maua-sp/waffle-station-parque-sao-vicente/b7377311-0483-49db-bd55-70bd00252480"
+    ]
+   ],
+   "h": "O link principal da bio leva ao iFood.",
+   "x": [
+    "Pedido próprio para retirada no balcão",
+    "Cardápio QR code na mesa",
+    "Cupons e fidelidade diretos",
+    "Google Perfil"
+   ],
+   "id": "ma-waffle-station"
+  },
+  {
+   "n": "Becas Café",
+   "c": "MA",
+   "s": "Cafés especiais e cestas",
+   "p": "M",
+   "a": "Não encontrado",
+   "t": [],
+   "l": [
+    [
+     "Instagram",
+     "https://www.instagram.com/becascafe/"
+    ]
+   ],
+   "h": "13,9 mil seguidores. Três links da bio não verificados.",
+   "x": [
+    "Loja online de cestas com data de entrega",
+    "Cardápio QR code",
+    "Automação de pedidos de cesta no WhatsApp"
+   ],
+   "id": "ma-becas-cafe"
+  },
+  {
+   "n": "Pizzaria Tradição",
+   "c": "MA",
+   "s": "Pizzaria a lenha",
+   "p": "M",
+   "a": "Não encontrado",
+   "t": [
+    "(11) 93056-6259"
+   ],
+   "l": [
+    [
+     "Instagram",
+     "https://www.instagram.com/pizzariatradica/"
+    ]
+   ],
+   "h": "Posts esparsos; endereço não aparece em lugar nenhum.",
+   "x": [
+    "Cardápio digital com pedido",
+    "Google Perfil com endereço",
+    "Chatbot no WhatsApp",
+    "Calendário de conteúdo"
+   ],
+   "id": "ma-pizzaria-tradicao"
+  },
+  {
+   "n": "Mamadi Marmitaria",
+   "c": "MA",
+   "s": "Marmitas fit sob encomenda",
+   "p": "M",
+   "a": "Não encontrado",
+   "t": [
+    "(11) 94706-7693"
+   ],
+   "l": [
+    [
+     "Instagram",
+     "https://www.instagram.com/mamadi.marmitaria/"
+    ]
+   ],
+   "h": "Kits e preços só pelo WhatsApp. Último post em 10/2025.",
+   "x": [
+    "Catálogo online de kits com preços",
+    "Assinatura semanal online",
+    "Cobrança automática via Pix",
+    "Bot com o cardápio da semana"
+   ],
+   "id": "ma-mamadi-marmitaria"
+  },
+  {
+   "n": "Aline Cris Correia – Bolos e Kit Festa",
+   "c": "MA",
+   "s": "Bolos e kit festa",
+   "p": "M",
+   "a": "Não encontrado",
+   "t": [],
+   "l": [
+    [
+     "Instagram",
+     "https://www.instagram.com/alinecriscorreia/"
+    ]
+   ],
+   "h": "6 mil seguidores. Orçamentos só pelo WhatsApp.",
+   "x": [
+    "Portfólio online",
+    "Formulário de orçamento",
+    "Página de kits com preços",
+    "Agenda de datas"
+   ],
+   "id": "ma-aline-cris-correia-bolos-e-kit-festa"
+  },
+  {
+   "n": "Pastelaria da Rosa Central",
+   "c": "MA",
+   "s": "Pastelaria",
+   "p": "M",
+   "a": "Não encontrado",
+   "t": [],
+   "l": [
+    [
+     "Instagram",
+     "https://www.instagram.com/pastelaria.da.rosa/"
+    ]
+   ],
+   "h": "7,2 mil seguidores, prêmio “Queridinhos de Mauá 2023”. Sem telefone nem endereço; confirmar se está ativa.",
+   "x": [
+    "Link na bio com cardápio digital",
+    "Google Perfil com endereço e horário",
+    "Pedido online e delivery",
+    "Rotina de conteúdo"
+   ],
+   "id": "ma-pastelaria-da-rosa-central"
+  },
+  {
+   "n": "M&C Pastéis e Salgados",
+   "c": "MA",
+   "s": "Pastelaria em feiras",
+   "p": "B",
+   "a": "Feira da Avenida Portugal",
+   "t": [],
+   "l": [
+    [
+     "Instagram",
+     "https://www.instagram.com/mcpasteisesalgados/"
+    ]
+   ],
+   "h": "Negócio itinerante, só WhatsApp.",
+   "x": [
+    "Cardápio QR code na barraca",
+    "Encomendas de salgados para festas",
+    "Google Perfil"
+   ],
+   "id": "ma-m-c-pasteis-e-salgados"
+  },
+  {
+   "n": "Dom Pizza Mauá",
+   "c": "MA",
+   "s": "Pizzaria (18h às 4h)",
+   "p": "B",
+   "a": "Av. Queiroz Pedroso, 410",
+   "t": [
+    "(11) 99925-4366"
+   ],
+   "l": [
+    [
+     "Instagram",
+     "https://www.instagram.com/dom.pizzamaua/"
+    ]
+   ],
+   "h": "Último post em 02/2024: confirmar se ainda funciona.",
+   "x": [
+    "Cardápio digital com pedido online",
+    "Chatbot 24h para a madrugada",
+    "Reativar o Instagram",
+    "Google Perfil"
+   ],
+   "id": "ma-dom-pizza-maua"
+  },
+  {
+   "n": "Pitoco Kids",
+   "c": "MA",
+   "s": "Moda infantil, 2 lojas",
+   "p": "A",
+   "a": "Av. Ayrton Senna da Silva, 452, Vila Santa Cecília, CEP 09380-440 · Av. Barão de Mauá, 5342, Jardim Itapeva, CEP 09341-550",
+   "t": [
+    "(11) 98378-7345",
+    "(11) 94006-1268"
+   ],
+   "l": [
+    [
+     "Instagram",
+     "https://www.instagram.com/pitocokidsoficial/"
+    ],
+    [
+     "Facebook",
+     "https://www.facebook.com/pitocokidsoficial/"
+    ],
+    [
+     "Linktree",
+     "https://linktr.ee/Pitocokidsoficial"
+    ]
+   ],
+   "h": "18,8 mil seguidores. Diz vender “para todo o Brasil”, mas só por WhatsApp e grupos VIP.",
+   "x": [
+    "Loja virtual com filtro por tamanho e frete",
+    "Estoque unificado das 2 lojas",
+    "Atendimento automático por unidade",
+    "Disparos para os grupos VIP"
+   ],
+   "id": "ma-pitoco-kids"
+  },
+  {
+   "n": "Dark Rose Moda Feminina",
+   "c": "MA",
+   "s": "Moda feminina",
+   "p": "A",
+   "a": "Rua Campos Sales, 98 B, Centro",
+   "t": [
+    "(11) 98187-9899"
+   ],
+   "l": [
+    [
+     "Instagram",
+     "https://www.instagram.com/darkrose_rc/"
+    ]
+   ],
+   "h": "31,6 mil seguidores. Vende e entrega só pelo WhatsApp.",
+   "x": [
+    "Loja virtual com Pix e cartão",
+    "Catálogo no WhatsApp Business",
+    "Disparo automático de novidades",
+    "Google Perfil"
+   ],
+   "id": "ma-dark-rose-moda-feminina"
+  },
+  {
+   "n": "P.R Cell",
+   "c": "MA",
+   "s": "Assistência de celular, 4 lojas",
+   "p": "A",
+   "a": "Unidades na Av. Portugal, no Centro e no Pq. São Vicente (números não encontrados)",
+   "t": [
+    "(11) 99513-7549"
+   ],
+   "l": [
+    [
+     "Instagram",
+     "https://www.instagram.com/p.r.cell__/"
+    ]
+   ],
+   "h": "8.443 seguidores, perfil verificado. Todo o atendimento num WhatsApp só.",
+   "x": [
+    "Orçamento online por modelo e defeito",
+    "Acompanhamento de ordem de serviço",
+    "Triagem automática para as 4 lojas",
+    "Loja online de acessórios",
+    "Google Perfil por unidade"
+   ],
+   "id": "ma-p-r-cell"
+  },
+  {
+   "n": "Mercado Baratinho",
+   "c": "MA",
+   "s": "Mercadinho, 3 lojas",
+   "p": "A",
+   "a": "Parque São Vicente (ruas não encontradas)",
+   "t": [],
+   "l": [
+    [
+     "Instagram",
+     "https://www.instagram.com/mercadobaratinhooficial/"
+    ]
+   ],
+   "h": "Ofertas semanais divulgadas por grupo de WhatsApp. Sem delivery próprio.",
+   "x": [
+    "Encarte digital de ofertas",
+    "Pedido online com retirada ou delivery",
+    "Lista de transmissão automática",
+    "Programa de fidelidade"
+   ],
+   "id": "ma-mercado-baratinho"
+  },
+  {
+   "n": "Angela Hair Studio",
+   "c": "MA",
+   "s": "Salão de beleza (23 anos)",
+   "p": "A",
+   "a": "Avenida Portugal, 91, Jardim Pilar",
+   "t": [],
+   "l": [
+    [
+     "Instagram",
+     "https://www.instagram.com/angelahairstudio/"
+    ],
+    [
+     "Linktree",
+     "https://linktr.ee/Angelahairstudi"
+    ]
+   ],
+   "h": "O botão “Agende seu horário” abre só o WhatsApp.",
+   "x": [
+    "Agenda online por profissional",
+    "Lembretes e confirmação automáticos",
+    "Site com portfólio de noivas e mechas",
+    "Sinal via Pix",
+    "Captação de avaliações"
+   ],
+   "id": "ma-angela-hair-studio"
+  },
+  {
+   "n": "Pet Shop São Vicente",
+   "c": "MA",
+   "s": "Banho e tosa",
+   "p": "A",
+   "a": "Rua Presidente Carlos Luz, 41, Parque São Vicente, CEP 09371-230",
+   "t": [
+    "(11) 4061-1365",
+    "(11) 94061-1365"
+   ],
+   "l": [
+    [
+     "Instagram",
+     "https://www.instagram.com/petshopsaovicente/"
+    ],
+    [
+     "Facebook",
+     "https://www.facebook.com/petsaovicente"
+    ],
+    [
+     "Linktree",
+     "https://linktr.ee/petshopsaovicente"
+    ]
+   ],
+   "h": "5.795 seguidores. “Agende no WhatsApp”; sem agenda online.",
+   "x": [
+    "Agendamento online de banho e tosa",
+    "Aviso automático de “pet pronto”",
+    "Pacotes ou assinatura mensal",
+    "Loja de ração com delivery",
+    "Google Perfil"
+   ],
+   "id": "ma-pet-shop-sao-vicente"
+  },
+  {
+   "n": "Espaço Renova",
+   "c": "MA",
+   "s": "Estética biomédica",
+   "p": "A",
+   "a": "Não encontrado",
+   "t": [
+    "(11) 97584-2958"
+   ],
+   "l": [
+    [
+     "Instagram",
+     "https://www.instagram.com/esprenova/"
+    ]
+   ],
+   "h": "Contato só pelo WhatsApp. Sem site nem agendamento.",
+   "x": [
+    "Agendamento online de avaliação",
+    "Site com procedimentos",
+    "Triagem automática no WhatsApp",
+    "Lembretes de retorno",
+    "Google Perfil"
+   ],
+   "id": "ma-espaco-renova"
+  },
+  {
+   "n": "Sabino Calçados",
+   "c": "MA",
+   "s": "Calçados",
+   "p": "A",
+   "a": "Rua Haiti, 193, Parque das Américas",
+   "t": [
+    "(11) 4547-4099",
+    "(11) 93072-3086"
+   ],
+   "l": [
+    [
+     "Instagram",
+     "https://www.instagram.com/sabino_calcados/"
+    ]
+   ],
+   "h": "Só link de WhatsApp. Sem site nem catálogo.",
+   "x": [
+    "Catálogo digital por numeração",
+    "Loja online com retirada na loja",
+    "WhatsApp Business com catálogo",
+    "Google Perfil"
+   ],
+   "id": "ma-sabino-calcados"
+  },
+  {
+   "n": "DMC Eletropeças",
+   "c": "MA",
+   "s": "Autopeças elétricas",
+   "p": "A",
+   "a": "Rua Alonso de Vasconcelos Pacheco, 777, Vila Bocaina",
+   "t": [
+    "(11) 4544-5477",
+    "(11) 94009-2302"
+   ],
+   "l": [
+    [
+     "Instagram",
+     "https://www.instagram.com/dmceletropecas/"
+    ]
+   ],
+   "h": "Posta peças toda semana, mas todo orçamento é manual.",
+   "x": [
+    "Catálogo pesquisável por veículo",
+    "Orçamento automático no WhatsApp",
+    "Vitrine com preços",
+    "Venda B2B para oficinas",
+    "Google Perfil"
+   ],
+   "id": "ma-dmc-eletropecas"
+  },
+  {
+   "n": "Casa Lino",
+   "c": "MA",
+   "s": "Material de construção",
+   "p": "MA",
+   "a": "Rua Raimundo Correia, 439, Feital",
+   "t": [
+    "(11) 4576-4163"
+   ],
+   "l": [
+    [
+     "Instagram",
+     "https://www.instagram.com/casalinomaua/"
+    ]
+   ],
+   "h": "Divulga financiamento de material, mas o único link é um checkout da Kiwify.",
+   "x": [
+    "Site com simulador de financiamento",
+    "Orçamento por lista de materiais",
+    "Catálogo de produtos",
+    "Chatbot no WhatsApp",
+    "Google Perfil"
+   ],
+   "id": "ma-casa-lino"
+  },
+  {
+   "n": "B'Lucca Planejados",
+   "c": "MA",
+   "s": "Móveis planejados",
+   "p": "MA",
+   "a": "Não encontrado",
+   "t": [
+    "(11) 97039-6182"
+   ],
+   "l": [
+    [
+     "Instagram",
+     "https://www.instagram.com/bluccaplanejados/"
+    ]
+   ],
+   "h": "Só WhatsApp. Sem site nem portfólio.",
+   "x": [
+    "Site com portfólio de projetos",
+    "Orçamento com medidas e fotos",
+    "Qualificação automática de leads",
+    "Google Perfil com avaliações"
+   ],
+   "id": "ma-b-lucca-planejados"
+  },
+  {
+   "n": "Jean Barber",
+   "c": "MA",
+   "s": "Barbearia",
+   "p": "MA",
+   "a": "Rua Zina… (incompleto)",
+   "t": [
+    "(11) 97479-7723"
+   ],
+   "l": [
+    [
+     "Instagram",
+     "https://www.instagram.com/barbershop.jean/"
+    ]
+   ],
+   "h": "Atende por ordem de chegada.",
+   "x": [
+    "Agenda online ou fila virtual",
+    "Plano de assinatura mensal",
+    "Google Perfil",
+    "Captação de avaliações"
+   ],
+   "id": "ma-jean-barber"
+  },
+  {
+   "n": "Amigo Pet",
+   "c": "MA",
+   "s": "Pet shop",
+   "p": "M",
+   "a": "Não encontrado",
+   "t": [
+    "(11) 95000-1530"
+   ],
+   "l": [
+    [
+     "Instagram",
+     "https://www.instagram.com/amigopetmaua/"
+    ]
+   ],
+   "h": "“Agende seu horário” leva ao WhatsApp.",
+   "x": [
+    "Agendamento online",
+    "Lembretes de banho",
+    "Catálogo de produtos",
+    "Mensagens automáticas de horário e preço"
+   ],
+   "id": "ma-amigo-pet"
+  },
+  {
+   "n": "Academia Extreme Fit",
+   "c": "MA",
+   "s": "Academia",
+   "p": "M",
+   "a": "Av. Dom José Gaspar, 1723, Jardim São Judas, CEP 09370-696",
+   "t": [
+    "(11) 97588-8578"
+   ],
+   "l": [
+    [
+     "Instagram",
+     "https://www.instagram.com/extremefitmaua/"
+    ],
+    [
+     "bio.site",
+     "https://bio.site/extremefitmaua"
+    ]
+   ],
+   "h": "Planos num PDF do Google Drive; matrícula pelo WhatsApp.",
+   "x": [
+    "Página de planos",
+    "Matrícula e assinatura online",
+    "Automação de leads",
+    "Agenda de avaliação física"
+   ],
+   "id": "ma-academia-extreme-fit"
+  },
+  {
+   "n": "BodyFit",
+   "c": "MA",
+   "s": "Academia",
+   "p": "M",
+   "a": "Provável Estr. Mauá e Adutora Rio Claro, 1336, Jardim Paranavaí (confirmar)",
+   "t": [
+    "(11) 96092-5063"
+   ],
+   "l": [
+    [
+     "Instagram",
+     "https://www.instagram.com/bodyfitmaua/"
+    ]
+   ],
+   "h": "Aula grátis marcada só pelo WhatsApp.",
+   "x": [
+    "Matrícula e pagamento online",
+    "Agendamento de aula experimental",
+    "Área do aluno",
+    "Reativação automática de alunos"
+   ],
+   "id": "ma-bodyfit"
+  },
+  {
+   "n": "Sertec",
+   "c": "MA",
+   "s": "Peças e conserto de eletrodomésticos",
+   "p": "M",
+   "a": "Não encontrado",
+   "t": [
+    "(11) 4516-2830"
+   ],
+   "l": [
+    [
+     "Instagram",
+     "https://www.instagram.com/sertec_maua/"
+    ]
+   ],
+   "h": "Desde 1995. Sem site nem catálogo de peças.",
+   "x": [
+    "Catálogo de peças por modelo",
+    "Agendamento de conserto",
+    "Automação no WhatsApp",
+    "Google Perfil"
+   ],
+   "id": "ma-sertec"
+  },
+  {
+   "n": "Papelaria Mauá",
+   "c": "MA",
+   "s": "Papelaria e presentes",
+   "p": "M",
+   "a": "Não encontrado",
+   "t": [
+    "(11) 4516-2977"
+   ],
+   "l": [
+    [
+     "Instagram",
+     "https://www.instagram.com/papelariamaua/"
+    ]
+   ],
+   "h": "Só WhatsApp. Último sinal de atividade em 11/2025.",
+   "x": [
+    "Pedido de lista escolar online",
+    "Catálogo de presentes",
+    "Loja online com retirada",
+    "WhatsApp Business com catálogo"
+   ],
+   "id": "ma-papelaria-maua"
+  },
+  {
+   "n": "Studio Jéssica Chiarotti",
+   "c": "MA",
+   "s": "Nail designer e cursos",
+   "p": "M",
+   "a": "Vila Bocaina",
+   "t": [],
+   "l": [
+    [
+     "Instagram",
+     "https://www.instagram.com/espacojessicachiarotti/"
+    ]
+   ],
+   "h": "Só WhatsApp. Sem agenda online nem página de cursos.",
+   "x": [
+    "Agenda online",
+    "Página de venda dos cursos",
+    "Lembretes automáticos",
+    "Portfólio"
+   ],
+   "id": "ma-studio-jessica-chiarotti"
+  },
+  {
+   "n": "Studio Concept Beauty",
+   "c": "MA",
+   "s": "Esmalteria e cursos",
+   "p": "M",
+   "a": "Av. José Moreira, Jardim Esperança",
+   "t": [],
+   "l": [
+    [
+     "Instagram",
+     "https://www.instagram.com/studio_conceptbeauty/"
+    ]
+   ],
+   "h": "Agenda manual. Confirmar se o link da bio já tem agenda.",
+   "x": [
+    "Agenda online",
+    "Venda online dos cursos",
+    "Lembretes",
+    "Catálogo de serviços com preços"
+   ],
+   "id": "ma-studio-concept-beauty"
+  },
+  {
+   "n": "RPG Fitness",
+   "c": "MA",
+   "s": "Moda fitness",
+   "p": "M",
+   "a": "Não encontrado",
+   "t": [],
+   "l": [
+    [
+     "Instagram",
+     "https://www.instagram.com/rpgfitnesslojamaua/"
+    ]
+   ],
+   "h": "6 mil seguidores, sem link nem telefone.",
+   "x": [
+    "Loja virtual",
+    "Catálogo no WhatsApp",
+    "Link de compra na bio",
+    "Google Perfil"
+   ],
+   "id": "ma-rpg-fitness"
+  },
+  {
+   "n": "Bar da Zilda",
+   "c": "PA",
+   "s": "Bar e restaurante",
+   "p": "A",
+   "a": "R. Direita, 420, Paranapiacaba, CEP 09150-230",
+   "t": [
+    "(11) 4439-0140",
+    "(11) 4439-0093"
+   ],
+   "l": [
+    [
+     "Instagram",
+     "https://www.instagram.com/bardazilda_paranapiacaba/"
+    ],
+    [
+     "Facebook",
+     "https://www.facebook.com/BarDaZilda/"
+    ]
+   ],
+   "h": "Abre fins de semana e feriados. Google 4,0 (2.473); TripAdvisor 2,9. Sem link na bio, site ou cardápio digital.",
+   "x": [
+    "Cardápio QR code para o pico de turistas",
+    "Página de reservas e eventos",
+    "Respostas automáticas no WhatsApp",
+    "Gestão de avaliações no TripAdvisor",
+    "Cardápio no Google Perfil"
+   ],
+   "id": "pa-bar-da-zilda"
+  },
+  {
+   "n": "Restaurante Estação do Sabor",
+   "c": "PA",
+   "s": "Self-service de comida baiana",
+   "p": "A",
+   "a": "Av. Antonio Olyntho, 485, Paranapiacaba, CEP 09150-040",
+   "t": [
+    "(11) 4439-0601",
+    "(11) 97626-1084"
+   ],
+   "l": [
+    [
+     "Instagram",
+     "https://www.instagram.com/estacaodosaborparanapiacaba/"
+    ],
+    [
+     "Facebook",
+     "https://www.facebook.com/people/Restaurante-Esta%C3%A7%C3%A3o-do-Sabor-Paranapiacaba/100063707641851/"
+    ]
+   ],
+   "h": "7.092 seguidores, Google 4,6 (332). A bio só tem um link de WhatsApp “Quero fazer uma reserva”.",
+   "x": [
+    "Reservas online com confirmação automática",
+    "Cardápio digital",
+    "Chatbot no WhatsApp",
+    "Página de links na bio",
+    "Orçamento para grupos e excursões"
+   ],
+   "id": "pa-restaurante-estacao-do-sabor"
+  },
+  {
+   "n": "Restaurante Vila Inglesa",
+   "c": "PA",
+   "s": "Restaurante",
+   "p": "A",
+   "a": "Av. Fox, 438/440, Paranapiacaba, CEP 09150-070",
+   "t": [
+    "(11) 94102-8692",
+    "(11) 4439-0190"
+   ],
+   "l": [
+    [
+     "Instagram",
+     "https://www.instagram.com/restaurante_vilainglesa/"
+    ],
+    [
+     "Facebook",
+     "https://www.facebook.com/profile.php?id=100063597249080"
+    ]
+   ],
+   "h": "Atende grupos escolares sem link nem site. Google 4,3 (916).",
+   "x": [
+    "Página para escolas e excursões com orçamento",
+    "Agendamento de grupos",
+    "Cardápio digital",
+    "Respostas automáticas no WhatsApp",
+    "Fortalecer o Instagram"
+   ],
+   "id": "pa-restaurante-vila-inglesa"
+  },
+  {
+   "n": "Café Infinito Olhar",
+   "c": "PA",
+   "s": "Cafeteria",
+   "p": "A",
+   "a": "Av. Fox, 435, Paranapiacaba, CEP 09150-070",
+   "t": [
+    "(11) 98555-6878"
+   ],
+   "l": [
+    [
+     "Instagram",
+     "https://www.instagram.com/cafeinfinitoolhar/"
+    ],
+    [
+     "Facebook",
+     "https://www.facebook.com/cafeinfinitoolhar/"
+    ],
+    [
+     "Heylink",
+     "http://heylink.me/cafeinfinitoolhar/"
+    ]
+   ],
+   "h": "10,6 mil seguidores, Google 4,6 (608). O Heylink só tem WhatsApp e Facebook.",
+   "x": [
+    "Cardápio digital",
+    "Site simples com horário e localização",
+    "Loja online de café em grão",
+    "Encomendas de bolos online",
+    "Melhorar a página de links"
+   ],
+   "id": "pa-cafe-infinito-olhar"
+  },
+  {
+   "n": "Cervejaria Mr. Balmann",
+   "c": "PA",
+   "s": "Restaurante e choperia",
+   "p": "A",
+   "a": "Av. Manoel Ferraz de Campos Salles, 451/452, Paranapiacaba",
+   "t": [
+    "(11) 99639-7416"
+   ],
+   "l": [
+    [
+     "Instagram",
+     "https://www.instagram.com/mr.balmann/"
+    ],
+    [
+     "Facebook",
+     "https://www.facebook.com/mr.balmann/"
+    ]
+   ],
+   "h": "7.718 seguidores. O link da bio é um Google Forms improvisado.",
+   "x": [
+    "Sistema de reservas ou pedidos no lugar do formulário",
+    "Cardápio digital",
+    "Site",
+    "Automação no WhatsApp",
+    "Venda de chope e growler para retirada"
+   ],
+   "id": "pa-cervejaria-mr-balmann"
+  },
+  {
+   "n": "Pousada SPA Milenar",
+   "c": "PA",
+   "s": "Pousada com spa",
+   "p": "A",
+   "a": "Caminho do Hospital Velho, 310, Paranapiacaba",
+   "t": [
+    "(11) 99895-0806"
+   ],
+   "l": [
+    [
+     "Instagram",
+     "https://www.instagram.com/pousadaspamilenar/"
+    ],
+    [
+     "WhatsApp",
+     "https://wa.me/message/HFG4CVD7XA64F1"
+    ]
+   ],
+   "h": "Reservas só pelo WhatsApp. Último post em 11/2025.",
+   "x": [
+    "Site com motor de reservas",
+    "Calendário de disponibilidade",
+    "Sinal via Pix",
+    "Venda de pacotes de spa",
+    "Respostas automáticas (tarifas, check-in)"
+   ],
+   "id": "pa-pousada-spa-milenar"
+  },
+  {
+   "n": "Pousada Tangará",
+   "c": "PA",
+   "s": "Hospedagem familiar (B&B)",
+   "p": "A",
+   "a": "Av. Manoel Ferraz de Campos Salles, 563, Paranapiacaba",
+   "t": [
+    "(11) 97892-2293",
+    "(11) 96866-8019"
+   ],
+   "l": [
+    [
+     "Instagram",
+     "https://www.instagram.com/pousadatangara.paranapiacaba/"
+    ],
+    [
+     "Facebook",
+     "https://www.facebook.com/Pousada-Tangara-1573956126201780"
+    ]
+   ],
+   "h": "2.982 seguidores. Reservas só pelo WhatsApp, sem site.",
+   "x": [
+    "Site com reservas online",
+    "Calendário de disponibilidade",
+    "Sinal via Pix",
+    "Respostas automáticas no WhatsApp"
+   ],
+   "id": "pa-pousada-tangara"
+  },
+  {
+   "n": "Apiaca Casa de Chá & Restaurante",
+   "c": "PA",
+   "s": "Restaurante e casa de chá",
+   "p": "MA",
+   "a": "Rua da Estação, 400, Paranapiacaba",
+   "t": [
+    "(11) 4439-0093"
+   ],
+   "l": [
+    [
+     "Instagram",
+     "https://www.instagram.com/apiacaparanapiacaba/"
+    ],
+    [
+     "Facebook",
+     "https://www.facebook.com/ApiacaParanAPIACAba/"
+    ]
+   ],
+   "h": "3.231 seguidores. Sem link na bio, site ou cardápio.",
+   "x": [
+    "Cardápio digital",
+    "Reservas online de chá da tarde",
+    "Página de links na bio",
+    "WhatsApp Business com catálogo"
+   ],
+   "id": "pa-apiaca-casa-de-cha-restaurante"
+  },
+  {
+   "n": "Hospedaria Vila Ferroviária",
+   "c": "PA",
+   "s": "Pousada",
+   "p": "MA",
+   "a": "Rua Rodrigues Quaresma, 35, Parte Alta, Paranapiacaba",
+   "t": [
+    "(11) 94383-1807"
+   ],
+   "l": [
+    [
+     "Instagram",
+     "https://www.instagram.com/hospedariavilaferroviaria/"
+    ]
+   ],
+   "h": "Negócio começando (Instagram criado em jul/2026). Reservas pelo WhatsApp.",
+   "x": [
+    "Site com reservas",
+    "Google Perfil",
+    "Cadastro no Booking",
+    "Montar o Instagram",
+    "Respostas automáticas"
+   ],
+   "id": "pa-hospedaria-vila-ferroviaria"
+  },
+  {
+   "n": "Restaurante Big Ben",
+   "c": "PA",
+   "s": "Self-service",
+   "p": "M",
+   "a": "Rua Antonio Olyntho, 481, Paranapiacaba",
+   "t": [
+    "(11) 4439-0296",
+    "(11) 4439-0254",
+    "(11) 99164-7367"
+   ],
+   "l": [
+    [
+     "Instagram",
+     "https://www.instagram.com/restaurantebigben/"
+    ]
+   ],
+   "h": "Agenda escolas e empresas sem link. Último post em 11/2025.",
+   "x": [
+    "Agendamento online de grupos",
+    "Cardápio digital",
+    "Cardápio no Google Perfil",
+    "Automação no WhatsApp"
+   ],
+   "id": "pa-restaurante-big-ben"
+  },
+  {
+   "n": "Railway Beer",
+   "c": "PA",
+   "s": "Bar, hambúrguer e cerveja de cambuci",
+   "p": "M",
+   "a": "Rua Antonio Thomaz, 19, Paranapiacaba",
+   "t": [
+    "(11) 4439-0048",
+    "(11) 99476-9557"
+   ],
+   "l": [
+    [
+     "Instagram",
+     "https://www.instagram.com/beerrailway/"
+    ],
+    [
+     "Facebook",
+     "https://www.facebook.com/railwaybeer/"
+    ]
+   ],
+   "h": "Último post em 08/2025. Link da bio leva só ao Facebook.",
+   "x": [
+    "Cardápio digital",
+    "Loja online da cerveja de cambuci",
+    "Site da marca",
+    "Gestão de redes sociais"
+   ],
+   "id": "pa-railway-beer"
+  },
+  {
+   "n": "Casa de Chá Raízes da Serra",
+   "c": "PA",
+   "s": "Café da manhã e chá da tarde",
+   "p": "M",
+   "a": "Av. Fox, 437, Paranapiacaba",
+   "t": [
+    "(11) 4439-0189"
+   ],
+   "l": [
+    [
+     "Instagram",
+     "https://www.instagram.com/casadecharaizes/"
+    ],
+    [
+     "Facebook",
+     "https://www.facebook.com/casadecharaizesdaserra/"
+    ]
+   ],
+   "h": "O único link da bio é o Threads.",
+   "x": [
+    "Cardápio digital",
+    "Reservas de café colonial",
+    "Encomendas de bolos online",
+    "Página de links na bio"
+   ],
+   "id": "pa-casa-de-cha-raizes-da-serra"
+  },
+  {
+   "n": "Lanchonete Tô na Pista",
+   "c": "PA",
+   "s": "Lanches e porções",
+   "p": "M",
+   "a": "Av. Fox, 434/436, Paranapiacaba",
+   "t": [
+    "(11) 91358-4313"
+   ],
+   "l": [
+    [
+     "Instagram",
+     "https://www.instagram.com/to_na_pistaa/"
+    ]
+   ],
+   "h": "Abre sábado e domingo. Sem link na bio.",
+   "x": [
+    "Cardápio QR code",
+    "Pedido antecipado para retirada",
+    "Link na bio"
+   ],
+   "id": "pa-lanchonete-to-na-pista"
+  },
+  {
+   "n": "Cachaçaria e Bistrô Paiol",
+   "c": "PA",
+   "s": "Bistrô e cachaçaria",
+   "p": "M",
+   "a": "Av. Fox, 442/444, Paranapiacaba",
+   "t": [],
+   "l": [
+    [
+     "Instagram",
+     "https://www.instagram.com/paiolparanapiacaba/"
+    ],
+    [
+     "Facebook",
+     "https://www.facebook.com/profile.php?id=100063465343896"
+    ]
+   ],
+   "h": "Sem telefone público, site ou cardápio.",
+   "x": [
+    "WhatsApp visível",
+    "Cardápio de cachaças e pratos",
+    "Loja online de cachaças",
+    "Google Perfil"
+   ],
+   "id": "pa-cachacaria-e-bistro-paiol"
+  },
+  {
+   "n": "Empório Irmãs da Lua",
+   "c": "PA",
+   "s": "Artesanato e presentes",
+   "p": "M",
+   "a": "Av. Manoel Ferraz de Campos Salles, 462, Paranapiacaba",
+   "t": [
+    "(11) 97343-1149"
+   ],
+   "l": [
+    [
+     "Instagram",
+     "https://www.instagram.com/irmas_dalua/"
+    ]
+   ],
+   "h": "6.315 seguidores. Um link da bio não pôde ser lido: confirmar se já há loja.",
+   "x": [
+    "Loja virtual para vender a turistas depois da visita",
+    "Catálogo no WhatsApp",
+    "Pix e frete integrados",
+    "Agendamento de atendimentos"
+   ],
+   "id": "pa-emporio-irmas-da-lua"
+  },
+  {
+   "n": "Restaurante Castelinho",
+   "c": "PA",
+   "s": "Restaurante",
+   "p": "B",
+   "a": "Av. Manoel Ferraz de Campos Salles, 25, Paranapiacaba",
+   "t": [
+    "(11) 97196-8422"
+   ],
+   "l": [
+    [
+     "Instagram",
+     "https://www.instagram.com/restaurante_castelinho2020/"
+    ]
+   ],
+   "h": "305 seguidores; último post em 08/2025.",
+   "x": [
+    "Reativar o Instagram",
+    "Cardápio digital",
+    "Google Perfil"
+   ],
+   "id": "pa-restaurante-castelinho"
+  },
+  {
+   "n": "Bistrô Flor do Cambuci",
+   "c": "PA",
+   "s": "Bistrô",
+   "p": "B",
+   "a": "Rua Antônio Tomaz, 05, Paranapiacaba",
+   "t": [
+    "(11) 99729-1873"
+   ],
+   "l": [
+    [
+     "Instagram",
+     "https://www.instagram.com/flor_do_cambuci/"
+    ]
+   ],
+   "h": "Último post em 03/2024: confirmar se está ativo.",
+   "x": [
+    "Confirmar se está funcionando",
+    "Cardápio digital",
+    "Google Perfil"
+   ],
+   "id": "pa-bistro-flor-do-cambuci"
+  },
+  {
+   "n": "Comida Caseira da Selma",
+   "c": "RG",
+   "s": "Restaurante e marmitex",
+   "p": "A",
+   "a": "R. Marília, 240, CEP 09450-000",
+   "t": [
+    "(11) 4820-1505"
+   ],
+   "l": [
+    [
+     "Restaurant Guru",
+     "https://restaurantguru.com/Comida-Caseira-Da-Selma-Rio-Grande-da-Serra"
+    ]
+   ],
+   "h": "Só WhatsApp, faz delivery. Google 4,5 (111). Sem Instagram encontrado.",
+   "x": [
+    "Cardápio do dia automático",
+    "Pedido online próprio de marmitas",
+    "Automação no WhatsApp",
+    "Plano semanal de marmitas",
+    "Criar o Instagram"
+   ],
+   "id": "rg-comida-caseira-da-selma"
+  },
+  {
+   "n": "Cravo & Canela Cafeteria",
+   "c": "RG",
+   "s": "Cafeteria e padaria",
+   "p": "A",
+   "a": "Av. Dom Pedro I, 165, Centro",
+   "t": [
+    "(11) 4821-4724"
+   ],
+   "l": [
+    [
+     "Restaurant Guru",
+     "https://restaurantguru.com/Cafeteria-Cravo-e-Canela-Rio-Grande-da-Serra"
+    ]
+   ],
+   "h": "Só Facebook, sem Instagram. 229 avaliações no Google (4,6).",
+   "x": [
+    "Criar o Instagram e link na bio",
+    "Cardápio digital",
+    "Encomendas online de bolos e salgados",
+    "WhatsApp Business com catálogo",
+    "Delivery próprio"
+   ],
+   "id": "rg-cravo-canela-cafeteria"
+  },
+  {
+   "n": "Cestas & Flores Mimariia's",
+   "c": "RG",
+   "s": "Floricultura e cestas",
+   "p": "A",
+   "a": "Rua Agostinho Cardoso, 65, Vila Figueiredo",
+   "t": [
+    "(11) 91452-4949"
+   ],
+   "l": [
+    [
+     "Instagram",
+     "https://www.instagram.com/cestas_mimariias/"
+    ]
+   ],
+   "h": "4.635 seguidores. Pedidos “pelo direct ou WhatsApp”.",
+   "x": [
+    "Loja virtual com agendamento de entrega",
+    "Pagamento por Pix ou link",
+    "Chatbot de pedidos",
+    "Lembrete de datas comemorativas",
+    "Google Perfil"
+   ],
+   "id": "rg-cestas-flores-mimariia-s"
+  },
+  {
+   "n": "Campos Pet",
+   "c": "RG",
+   "s": "Banho, tosa e táxi dog",
+   "p": "A",
+   "a": "Monte Alegre (Rua Piolim ou Estr. Guilherme Pinto Monteiro, 930; as fontes divergem)",
+   "t": [
+    "(11) 94339-0340",
+    "(11) 94125-1652"
+   ],
+   "l": [
+    [
+     "Instagram",
+     "https://www.instagram.com/campospetbanhoetosa/"
+    ]
+   ],
+   "h": "Agenda pelo WhatsApp. Sem site nem agenda online.",
+   "x": [
+    "Agendamento online com táxi dog",
+    "Chatbot no WhatsApp",
+    "Google Perfil com o endereço certo",
+    "Catálogo de rações",
+    "Programa de fidelidade"
+   ],
+   "id": "rg-campos-pet"
+  },
+  {
+   "n": "Cerealista Santo",
+   "c": "RG",
+   "s": "Produtos naturais",
+   "p": "MA",
+   "a": "Não encontrado",
+   "t": [
+    "(11) 94194-7962"
+   ],
+   "l": [
+    [
+     "Instagram",
+     "https://www.instagram.com/cerealistasanto/"
+    ]
+   ],
+   "h": "“Faça seu pedido” leva ao WhatsApp. Sem catálogo.",
+   "x": [
+    "Catálogo ou loja online com delivery",
+    "WhatsApp Business com catálogo",
+    "Google Perfil com endereço",
+    "Programa de fidelidade"
+   ],
+   "id": "rg-cerealista-santo"
+  },
+  {
+   "n": "Armazém Tia Dedé",
+   "c": "RG",
+   "s": "Restaurante e armazém",
+   "p": "M",
+   "a": "Av. Santo Antônio, 27",
+   "t": [
+    "(11) 95221-5526"
+   ],
+   "l": [
+    [
+     "Restaurant Guru",
+     "https://restaurantguru.com/Armazem-Tia-Dede-Rio-Grande-da-Serra"
+    ]
+   ],
+   "h": "Google 4,8 (50). Só WhatsApp.",
+   "x": [
+    "Criar o Instagram",
+    "Cardápio do dia digital",
+    "Catálogo de marmitas no WhatsApp",
+    "Google Perfil"
+   ],
+   "id": "rg-armazem-tia-dede"
+  },
+  {
+   "n": "Pizzaria Abachioni",
+   "c": "RG",
+   "s": "Pizzaria delivery",
+   "p": "M",
+   "a": "Av. Santa Tereza, 1759",
+   "t": [
+    "(11) 97261-3315"
+   ],
+   "l": [
+    [
+     "Instagram",
+     "https://www.instagram.com/pizzariaabachioni/"
+    ],
+    [
+     "Restaurant Guru",
+     "https://restaurantguru.com/Pizzaria-Abachioni-Rio-Grande-da-Serra"
+    ]
+   ],
+   "h": "Pedidos pelo WhatsApp; Google 4,3 (188). Confirmar se a bio já tem link de cardápio.",
+   "x": [
+    "Cardápio digital com pedido online",
+    "Automação no WhatsApp",
+    "Programa de fidelidade",
+    "Organizar o Instagram"
+   ],
+   "id": "rg-pizzaria-abachioni"
+  },
+  {
+   "n": "Amanda Maria Nails",
+   "c": "RG",
+   "s": "Unhas",
+   "p": "M",
+   "a": "Não encontrado",
+   "t": [],
+   "l": [
+    [
+     "Instagram",
+     "https://www.instagram.com/amandamarianails/"
+    ]
+   ],
+   "h": "Atende pelo direct, sem link na bio.",
+   "x": [
+    "Agendamento online",
+    "Link de WhatsApp na bio",
+    "Lembrete de manutenção a cada 15–21 dias",
+    "Google Perfil"
+   ],
+   "id": "rg-amanda-maria-nails"
+  },
+  {
+   "n": "Pastelaria do Biju",
+   "c": "RG",
+   "s": "Pastelaria delivery",
+   "p": "B",
+   "a": "Av. Jean Lieutaud, 135",
+   "t": [
+    "(11) 97513-5808"
+   ],
+   "l": [
+    [
+     "Restaurant Guru",
+     "https://restaurantguru.com/Pastelaria-do-Biju-Rio-Grande-da-Serra"
+    ]
+   ],
+   "h": "Só WhatsApp e Facebook. Google 4,1 (158), algumas avaliações negativas.",
+   "x": [
+    "Cardápio digital com pedido online",
+    "Criar o Instagram",
+    "Gestão de avaliações",
+    "Respostas automáticas"
+   ],
+   "id": "rg-pastelaria-do-biju"
+  }
+ ]
+}

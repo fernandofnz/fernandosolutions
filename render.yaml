@@ -1,0 +1,23 @@
+# Configuracao para o Render (Blueprint). As variaveis marcadas com sync: false sao pedidas na criacao.
+services:
+  - type: web
+    name: prospeccao-fernando-solutions
+    runtime: node
+    plan: free
+    region: virginia
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /saude
+    envVars:
+      - key: NODE_VERSION
+        value: "24"
+      - key: NODE_ENV
+        value: production
+      - key: SEGREDO_SESSAO
+        generateValue: true
+      - key: PROSP_ADMIN_SENHA
+        sync: false
+      - key: TURSO_DATABASE_URL
+        sync: false
+      - key: TURSO_AUTH_TOKEN
+        sync: false
